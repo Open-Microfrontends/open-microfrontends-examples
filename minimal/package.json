@@ -13,7 +13,7 @@
     "@open-microfrontends/open-microfrontends-generator": "file:../../open-microfrontends-generator"
   },
   "scripts": {
-    "generate": "omg microfrontends.yaml microfrontends/_generated -t renderersPlainJS,mashroomPluginConfig -a mashroomCategory=Demo && omg microfrontends.yaml test/_generated -t hostIntegrationBrowser",
+    "generate": "omg microfrontends.yaml microfrontends/_generated -t renderersPlainJS,mashroomPluginConfig -a mashroomCategory=Demo && omg microfrontends.yaml test/_generated -t hostIntegrationsBrowser",
     "type-check": "tsc --noEmit",
     "build": "tsc && cpy test/index.html dist/test --flat",
     "start": "npm run build && node dist/microfrontends/server"
