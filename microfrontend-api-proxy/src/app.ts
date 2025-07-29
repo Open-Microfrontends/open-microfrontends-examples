@@ -1,0 +1,60 @@
+import {onRenderMinimalAPIProxyMicrofrontend} from './_generated/microfrontendRenderers.js';
+
+const mainTemplate = (customerId: string) => {
+    return `
+        <div style="padding: 20px">
+            <h3>Customer #${customerId}</h3>
+            <div id="content">
+                Loading...
+            </div>
+        </div>
+    `;
+};
+
+const customerTemplate = (customerId: string, lastName: string, firstName: string) => {
+    return `
+        <table>
+           <tr>
+               <th>ID</th>
+               <td>${customerId}</td>
+           </tr>
+           <tr>
+               <th>Last Name</th>
+               <td>${lastName}</td>
+           </tr>
+           <tr>
+               <th>First Name</th>
+               <td>${firstName}</td>
+           </tr>
+       </table>
+    `;
+}
+
+onRenderMinimalAPIProxyMicrofrontend(async (host, context) => {
+    const {config, apiProxyPaths} = context;
+
+    const tpl = document.createElement('template');
+    tpl.innerHTML = mainTemplate(config.customerId);
+    const contentNode = tpl.content.querySelector('#content');
+
+    host.innerHTML = '';
+    host.append( tpl.content);
+
+    try {
+        const response = await fetch(`${apiProxyPaths.bff}/customers/${config.customerId}`);
+        const customer = await response.json();
+        const customerTpl = document.createElement('template');
+        customerTpl.innerHTML = customerTemplate(config.customerId, customer.lastName, customer.firstName);
+        contentNode.innerHTML = '';
+        contentNode.append(customerTpl.content);
+    } catch (e) {
+        console.error('Loading customer failed!', e);
+        contentNode.innerHTML = '<span style="color: red">Loading failed!</span>';
+    }
+
+    return {
+        onRemove: () => {
+            host.innerHTML = '';
+        }
+    }
+});

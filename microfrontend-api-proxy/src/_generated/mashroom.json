@@ -1,0 +1,51 @@
+{
+    "$schema": "https://www.mashroom-server.com/schemas/mashroom-plugins.json",
+    "plugins": [
+    
+        {
+            "name": "Minimal API Proxy Microfrontend",
+            "type": "portal-app2",
+            
+            "clientBootstrap": "startMinimalApiProxyMicrofrontend",
+            "resources": {
+    "js": [
+        "app.mjs"
+    ]
+},
+            "local": {
+                "resourcesRoot": "./unknown-local-not-supported"
+            },
+            "remote": {
+                
+                "resourcesRoot": "/public"
+            },
+            "defaultConfig": {
+                
+                
+                "category": "Demo",
+                
+                
+                
+                
+                "proxies": {
+                
+                    "bff": {
+                        "targetUri": "/api",
+                        
+                        "restrictToRoles": ["Authenticated"],
+                        
+                        "sendPermissionsHeader": true
+                    }                
+                },
+                
+                
+                "caching": {
+                    "ssrHtml": "same-config"
+                },
+                "appConfig": {
+    "customerId": "1000"
+}            }
+        }
+    
+    ]
+}

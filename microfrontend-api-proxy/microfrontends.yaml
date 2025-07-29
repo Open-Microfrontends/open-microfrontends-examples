@@ -1,0 +1,31 @@
+openMicrofrontends: 1.0.0
+servers:
+- url: 'http://localhost:7891'
+  description: Local Test Server
+microfrontends:
+- name: Minimal API Proxy Microfrontend
+  resources:
+    js:
+    # Extension needs to be mjs because it is a module
+    - app.mjs
+  paths:
+    resourcesBase: /public
+  globalLaunchFunction: startMinimalApiProxyMicrofrontend
+  apiProxies:
+    # Frameworks must prepend the URL of the Microfrontend server here (if this is a relative path)
+    bff: /api
+  accessControl:
+    apiProxyRoles:
+      # Only allow authenticated users to access the proxy
+      bff: [ 'Authenticated' ]
+  config:
+    schema:
+      type: object
+      properties:
+        customerId:
+          type: string
+          description: The customer ID
+      required: [ "customerId" ]
+    default:
+      customerId: '1000'
+

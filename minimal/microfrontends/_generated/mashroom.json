@@ -1,0 +1,40 @@
+{
+    "$schema": "https://www.mashroom-server.com/schemas/mashroom-plugins.json",
+    "plugins": [
+    
+        {
+            "name": "Minimal Microfrontend",
+            "type": "portal-app2",
+            
+            "clientBootstrap": "startMinimalMicrofrontend",
+            "resources": {
+    "js": [
+        "app1.mjs"
+    ]
+},
+            "local": {
+                "resourcesRoot": "./unknown-local-not-supported"
+            },
+            "remote": {
+                
+                "resourcesRoot": "/public/microfrontends"
+            },
+            "defaultConfig": {
+                
+                
+                "category": "Demo",
+                
+                
+                
+                
+                
+                "caching": {
+                    "ssrHtml": "same-config"
+                },
+                "appConfig": {
+    "welcomeMessage": "Hello World!"
+}            }
+        }
+    
+    ]
+}

@@ -1,0 +1,32 @@
+openMicrofrontends: 1.0.0
+servers:
+- url: 'http://localhost:7890'
+  description: Local Test Server
+microfrontends:
+- name: Minimal Microfrontend
+  resources:
+    js:
+    # Extension needs to be mjs because it is a module
+    - app1.mjs
+  paths:
+    resourcesBase: /public/microfrontends
+  globalLaunchFunction: startMinimalMicrofrontend
+  config:
+    schema:
+      type: object
+      properties:
+        welcomeMessage:
+          type: string
+      required: [ "welcomeMessage" ]
+    default:
+      welcomeMessage: Hello World!
+  messages:
+    ping:
+      publish: true
+      subscribe: true
+      schema:
+        type: object
+        properties:
+          ping:
+            const: true
+        required: [ "ping" ]

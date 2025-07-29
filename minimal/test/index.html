@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <title>Microfrontend Test Page</title>
+        <script>
+            // We need a global messageBus for inter-Microfrontend communication
+            window.globalMessageBus = {
+                listeners: [],
+                publish(topic, data) {
+                    this.listeners.filter(l => l.topic === topic).forEach(l => l.listener(data))
+                },
+                subscribe(topic, listener) {
+                    this.listeners.push({ topic, listener });
+                },
+                unsubscribe() {}
+            };
+        </script>
+    </head>
+    <body>
+        <div id="root"></div>
+        <div style="margin-top: 20px">
+            <button onclick="window.globalMessageBus.publish('ping', { ping: true })">Send Ping</button>
+        </div>
+        <script src="/public/test/main.js" type="module"></script>
+    </body>
+</html>
