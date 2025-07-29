@@ -1,4 +1,4 @@
-import {startMinimalMicrofrontend} from './_generated/microfrontendClients';
+import {startMinimalMicrofrontend} from './_generated/microfrontendStarters';
 
 console.info('Starting Microfrontend in container #root');
 
