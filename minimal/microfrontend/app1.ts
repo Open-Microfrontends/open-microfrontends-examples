@@ -1,4 +1,4 @@
-import {onRenderMinimalMicrofrontend} from './_generated/microfrontendRenderers';
+import {onRenderMinimalMicrofrontend} from './_generated/microfrontendRenderers.js';
 
 const template = (helloWorldMessage: string) => {
     return `

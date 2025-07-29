@@ -3,13 +3,13 @@ servers:
 - url: 'http://localhost:7890'
   description: Local Test Server
 microfrontends:
-- name: Minimal Microfrontend
+- name: OpenMicrofrontends Example Minimal
   resources:
     js:
     # Extension needs to be mjs because it is a module
     - app1.mjs
   paths:
-    resourcesBase: /public/microfrontends
+    resourcesBase: /
   globalLaunchFunction: startMinimalMicrofrontend
   config:
     schema:

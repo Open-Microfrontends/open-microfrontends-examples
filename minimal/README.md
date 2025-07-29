@@ -1,27 +1,40 @@
 
-# OpenMicrofrontends Minimal Example
+# OpenMicrofrontends Example Minimal
 
 A minimal - *OpenMicrofrontends* compliant - Microfrontend that shows a welcome message
 and sends and receives ping messages.
 
-The implementation has no framework dependencies and doesn't use any bundler. 
-The Microfrontend is hosted in a simple HTML page and doesn't require a server component (on the host side).
+The implementation only depends on *Node.js* and doesn't use any bundlers.
 
-The definition file is [microfrontends.yaml](./microfrontends.yaml). 
-If you update it run ```npm run generate``` to re-generate the types.
+The Microfrontend is hosted on a simple HTML page and doesn't require any specific server-side code.
+
+The definition file is [microfrontends.yaml](./microfrontends.yaml).
+If you update it you have to run ```npm run generate``` in all submodules.
 
 ## Usage
 
-Start the Microfrontend (server):
+### Start the Microfrontend Server
 
+    cd microfrontend
+    npm i
     npm start
 
-There is a test page available under http://localhost:7890/public/test that starts the *Microfrontend* using a generated starter.
+ The Microfrontend resources will be served under http://localhost:7890
 
-Alternatively, it could be loaded in *Mashroom Portal* like this:
+### Browser Host
+
+    cd host-browser
+    npm i
+    npm start
+
+The Microfrontend host page will be available under: http://127.0.0.1:7895
+
+### Mashroom Server Host
+
+Run the Microfrontend in *Mashroom Server* like this:
 
  * Start the [Mashroom Portal Quickstart Template](https://github.com/nonblocking/mashroom-portal-quickstart)
  * Open http://localhost:5050/mashroom/admin/ext/remote-portal-apps
  * Add http://localhost:7890 as a new Remote App URL
  * Goto http://localhost:5050, login as admin/admin
- * Add the App "Minimal Microfrontend" to any page
+ * Add the App "OpenMicrofrontends Example Minimal" to any page

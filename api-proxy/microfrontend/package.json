@@ -13,10 +13,10 @@
     "cpy-cli": "^5.0.0",
     "typescript": "^5.8.3",
     "@types/express": "^5.0.3",
-    "@open-microfrontends/open-microfrontends-generator": "file:../../open-microfrontends-generator"
+    "@open-microfrontends/open-microfrontends-generator": "file:../../../open-microfrontends-generator"
   },
   "scripts": {
-    "generate": "omg microfrontends.yaml src/_generated -t renderersPlainJS,mashroomPluginConfig -a mashroomCategory=Demo",
+    "generate": "omg ../microfrontends.yaml src/_generated -t renderersPlainJS,mashroomPluginConfig -a mashroomCategory=Demo",
     "type-check": "tsc --noEmit",
     "build": "tsc && cpy dist/app.js dist --rename=app.mjs --flat",
     "start": "npm run build && node dist/server"

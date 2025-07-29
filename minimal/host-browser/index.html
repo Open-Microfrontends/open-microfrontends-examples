@@ -1,4 +1,4 @@
-<html>
+<html lang="en">
     <head>
         <title>Microfrontend Test Page</title>
         <script>
@@ -20,6 +20,9 @@
         <div style="margin-top: 20px">
             <button onclick="window.globalMessageBus.publish('ping', { ping: true })">Send Ping</button>
         </div>
-        <script src="/public/test/main.js" type="module"></script>
+        <p>
+            Hint: After 10 pings the Microfrontend will be unloaded.
+        </p>
+        <script src="main.js" type="module"></script>
     </body>
 </html>

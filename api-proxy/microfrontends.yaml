@@ -3,7 +3,7 @@ servers:
 - url: 'http://localhost:7891'
   description: Local Test Server
 microfrontends:
-- name: Minimal API Proxy Microfrontend
+- name: OpenMicrofrontends Example API Proxy
   resources:
     js:
     # Extension needs to be mjs because it is a module

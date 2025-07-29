@@ -3,13 +3,13 @@
     "plugins": [
     
         {
-            "name": "Minimal API Proxy Microfrontend",
+            "name": "OpenMicrofrontends Example Minimal",
             "type": "portal-app2",
             
-            "clientBootstrap": "startMinimalApiProxyMicrofrontend",
+            "clientBootstrap": "startMinimalMicrofrontend",
             "resources": {
     "js": [
-        "app.mjs"
+        "app1.mjs"
     ]
 },
             "local": {
@@ -17,7 +17,7 @@
             },
             "remote": {
                 
-                "resourcesRoot": "/public"
+                "resourcesRoot": "/"
             },
             "defaultConfig": {
                 
@@ -27,23 +27,12 @@
                 
                 
                 
-                "proxies": {
-                
-                    "bff": {
-                        "targetUri": "/api",
-                        
-                        "restrictToRoles": ["Authenticated"],
-                        
-                        "sendPermissionsHeader": true
-                    }                
-                },
-                
                 
                 "caching": {
                     "ssrHtml": "same-config"
                 },
                 "appConfig": {
-    "customerId": "1000"
+    "welcomeMessage": "Hello World!"
 }            }
         }
     

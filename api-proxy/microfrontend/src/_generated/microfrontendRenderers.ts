@@ -6,18 +6,16 @@
 
 /* Config Types */
 export interface Microfrontend1Config {
-  welcomeMessage: string;
+  /**
+   * The customer ID
+   */
+  customerId: string;
   [k: string]: unknown;
 }
 
 
 /* Message Types */
-export interface Microfrontend1TopicPing {
-  ping: true;
-  [k: string]: unknown;
-}
 
-    
 
 type OpenMicrofrontendLifecycleHooks = {
     readonly onRemove?: () => void | Promise<void>;
@@ -28,7 +26,7 @@ type Partial<T> = {
 };
 
 
-// Render context for Microfrontend: Minimal Microfrontend
+// Render context for Microfrontend: OpenMicrofrontends Example API Proxy
 type Microfrontend1Context = {
     // The unique ID of this Microfrontend instance
     readonly id: string;
@@ -41,29 +39,23 @@ type Microfrontend1Context = {
         
     },
     
-    readonly config: Microfrontend1Config;
+    readonly apiProxyPaths: {
+        
+        readonly 'bff': string;
+        
+    },
     
-    readonly messageBus: {
-        
-        
-        publish(topic: 'ping', data: Microfrontend1TopicPing): void;
-        
-        
-        subscribe(topic: 'ping', cb: (data: Microfrontend1TopicPing) => void): void;
-        unsubscribe(topic: 'ping', cb: (data: Microfrontend1TopicPing) => void): void;
-        
-        
-    };
+    readonly config: Microfrontend1Config;
     
 }
 
 
 type Microfrontend1RenderCb = (hostElement: HTMLElement, context: Microfrontend1Context) => Promise<OpenMicrofrontendLifecycleHooks>;
 
-// Render function for Microfrontend: Minimal Microfrontend
-export function onRenderMinimalMicrofrontend(cb: Microfrontend1RenderCb): void {
+// Render function for Microfrontend: OpenMicrofrontends Example API Proxy
+export function onRenderOpenMicrofrontendsExampleAPIProxy(cb: Microfrontend1RenderCb): void {
 
-    (window as any)['startMinimalMicrofrontend'] = async (hostElement: HTMLElement, ...otherArgs: any[]) => {
+    (window as any)['startMinimalApiProxyMicrofrontend'] = async (hostElement: HTMLElement, ...otherArgs: any[]) => {
         // Temporary Mashroom Server compatibility, until it supports OpenMicrofrontends natively
         const enableTempMashroomComp = otherArgs.length === 2 && otherArgs[0].appId && otherArgs[0].proxyPaths;
 
@@ -77,14 +69,8 @@ export function onRenderMinimalMicrofrontend(cb: Microfrontend1RenderCb): void {
                 
             },
             config: {
-    "welcomeMessage": "Hello World!"
+    "customerId": "1000"
 },
-            
-            messageBus: {
-                publish(topic: any) { console.warn(`OpenMicrofrontends: Publish to topic ${topic} but no messageBus present!`); },
-                subscribe(topic: any) { console.warn(`OpenMicrofrontends: Subscribe to topic ${topic} but no messageBus present!`); },
-                unsubscribe(topic: any) {},
-            },
             
         };
 
@@ -98,9 +84,9 @@ export function onRenderMinimalMicrofrontend(cb: Microfrontend1RenderCb): void {
                 lang,
                 user,
                 
-                config: appConfig,
+                apiProxyPaths: proxyPaths,
                 
-                messageBus,
+                config: appConfig,
                 
             };
         } else {
@@ -113,7 +99,11 @@ export function onRenderMinimalMicrofrontend(cb: Microfrontend1RenderCb): void {
 
         // Validate
         
-        console.debug('OpenMicrofrontends: Starting Microfrontend "Minimal Microfrontend" with context:', context);
+        if (!context.apiProxyPaths) {
+            throw new Error('[OpenMicrofrontends] No apiProxyPaths provided!');
+        }
+        
+        console.debug('[OpenMicrofrontends] Starting Microfrontend "OpenMicrofrontends Example API Proxy" with context:', context);
         const result = await cb(hostElement, context);
 
         if (enableTempMashroomComp) {
