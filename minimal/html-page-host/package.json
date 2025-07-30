@@ -1,5 +1,5 @@
 {
-  "name": "@open-microfrontends/examples-minimal-host-browser",
+  "name": "@open-microfrontends/examples-minimal-html-page-host",
   "version": "1.0.0",
   "type": "module",
   "private": true,

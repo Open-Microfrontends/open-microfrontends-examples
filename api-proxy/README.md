@@ -21,11 +21,11 @@ If you update it you have to run ```npm run generate``` in all submodules.
 
 The OpenMicrofrontend specs will be exposed under: http://localhost:7891/microfrontends.yaml
 
-### Express.js Host
+### Express.js Server Host
 
 **TODO**
 
-## Spring Boot Host
+## Spring Boot Server Host
 
 **TODO**
 

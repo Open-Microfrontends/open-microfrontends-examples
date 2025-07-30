@@ -1,4 +1,4 @@
-import {onRenderMinimalMicrofrontend} from './_generated/microfrontendRenderers.js';
+import {onRenderOpenMicrofrontendsExampleMinimal} from './_generated/microfrontendRenderers.js';
 
 const template = (helloWorldMessage: string) => {
     return `
@@ -12,7 +12,7 @@ const template = (helloWorldMessage: string) => {
     `;
 };
 
-onRenderMinimalMicrofrontend(async (host, context) => {
+onRenderOpenMicrofrontendsExampleMinimal(async (host, context) => {
     const {config, messageBus} = context;
     let count = 0;
 

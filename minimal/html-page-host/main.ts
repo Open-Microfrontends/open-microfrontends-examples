@@ -1,11 +1,11 @@
-import {startMinimalMicrofrontend} from './_generated/microfrontendStarters.js';
+import {startOpenMicrofrontendsExampleMinimal} from './_generated/microfrontendStarters.js';
 
 console.info('Starting Microfrontend in container #root');
 
 const host = document.getElementById('root');
 
 const start = async () => {
-    const {close, messages} = await startMinimalMicrofrontend('http://localhost:7890', host, {
+    const {close, messages} = await startOpenMicrofrontendsExampleMinimal('http://localhost:7890', host, {
         // id: '1',
         // lang: 'en',
         // user,

@@ -6,7 +6,7 @@ and sends and receives ping messages.
 
 The implementation only depends on *Node.js* and doesn't use any bundlers.
 
-The Microfrontend is hosted on a simple HTML page and doesn't require any specific server-side code.
+The Microfrontend can be hosted on a simple HTML page and doesn't require any specific server-side code.
 
 The definition file is [microfrontends.yaml](./microfrontends.yaml).
 If you update it you have to run ```npm run generate``` in all submodules.
@@ -21,9 +21,9 @@ If you update it you have to run ```npm run generate``` in all submodules.
 
  The Microfrontend resources will be served under http://localhost:7890
 
-### Browser Host
+### Start the HTML Host
 
-    cd host-browser
+    cd html-page-host
     npm i
     npm start
 
