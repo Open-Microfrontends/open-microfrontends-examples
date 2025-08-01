@@ -14,10 +14,6 @@ microfrontends:
   apiProxies:
     # Frameworks must prepend the URL of the Microfrontend server here (if this is a relative path)
     bff: /api
-  accessControl:
-    apiProxyRoles:
-      # Only allow authenticated users to access the proxy
-      bff: [ 'Authenticated' ]
   config:
     schema:
       type: object
@@ -28,4 +24,7 @@ microfrontends:
       required: [ "customerId" ]
     default:
       customerId: '1000'
-
+  annotations:
+    MASHROOM_PROXY_ACCESS_ROLES:
+      bff:
+        - Authenticated

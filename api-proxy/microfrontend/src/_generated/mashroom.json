@@ -27,10 +27,14 @@
                 
                 
                 
+                
                 "proxies": {
                 
                     "bff": {
+                        
                         "targetUri": "/api",
+                        
+                        
                         
                         "restrictToRoles": ["Authenticated"],
                         
