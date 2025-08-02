@@ -8,7 +8,7 @@ The implementation only depends on *Node.js* and doesn't use any bundlers.
 
 The Microfrontend can be hosted on a simple HTML page and doesn't require any specific server-side code.
 
-The definition file is [microfrontends.yaml](./microfrontends.yaml).
+The spec file is [microfrontends.yaml](./microfrontends.yaml).
 If you update it you have to run ```npm run generate``` in all submodules.
 
 ## Usage

@@ -8,7 +8,7 @@ accessible from the browser the *Microfrontend* is running in (CORS).
 This example requires a server component on the host side to fetch the resources and
 make the internal API accessible through some proxy path.
 
-The definition file is [microfrontends.yaml](./microfrontends.yaml). 
+The spec file is [microfrontends.yaml](./microfrontends.yaml). 
 If you update it you have to run ```npm run generate``` in all submodules. 
 
 ## Usage
