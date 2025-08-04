@@ -1,6 +1,8 @@
 
 # OpenMicrofrontends Examples
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 Working examples of [OpenMicrofrontends](https://www.open-microfrontends.org) based Microfrontends and host integrations.
 
 ## Examples
