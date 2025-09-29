@@ -1,6 +1,6 @@
 openMicrofrontends: 1.0.0
 servers:
-- url: 'http://localhost:7890'
+- url: 'http://localhost:7800'
   description: Local Test Server
 microfrontends:
 - name: OpenMicrofrontends Example Browser Standalone Hello World

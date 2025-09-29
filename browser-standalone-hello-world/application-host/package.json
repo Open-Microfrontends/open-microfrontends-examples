@@ -20,6 +20,6 @@
     "generate": "omg ../microfrontends.yaml _generated -t startersBrowserStandalone",
     "type-check": "tsc --noEmit",
     "build": "tsc && cpy index.html dist --flat",
-    "start": "npm run build && http-server dist -p 7895 -c-1"
+    "start": "npm run build && http-server dist -p 7900 -c-1"
   }
 }

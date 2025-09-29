@@ -1,6 +1,6 @@
 openMicrofrontends: 1.0.0
 servers:
-- url: 'http://localhost:7891'
+- url: 'http://localhost:7820'
   description: Local Test Server
 securitySchemes:
   ApiKeyAuth:

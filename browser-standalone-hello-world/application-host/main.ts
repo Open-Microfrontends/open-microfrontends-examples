@@ -5,7 +5,7 @@ console.info('Starting Microfrontend in container #root');
 const host = document.getElementById('root');
 
 const start = async () => {
-    const {close, messages} = await startOpenMicrofrontendsExampleBrowserStandaloneHelloWorld('http://localhost:7890', host, {
+    const {close, messages} = await startOpenMicrofrontendsExampleBrowserStandaloneHelloWorld('http://localhost:7800', host, {
         id: '1',
         // lang: 'en',
         // user,
