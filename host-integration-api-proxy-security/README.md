@@ -28,14 +28,3 @@ The OpenMicrofrontend specs will be exposed under: http://localhost:7891/microfr
 ### Spring Boot Server Application Host
 
 **TODO**
-
-### Mashroom Server 3
-
-To host the Microfrontend in *Mashroom Server*:
-
-* Start the [Mashroom Portal v3 Preview Quickstart](https://github.com/nonblocking/mashroom-portal-quickstart-v3-preview)
-* Open http://localhost:5050/mashroom/admin/ext/remote-plugin-packages
-* Add http://localhost:7890 as a new Remote Plugin Package URL
-* Goto http://localhost:5050, login as admin/admin
-* Add the App "OpenMicrofrontends Example Minimal" to an arbitrary page
-
