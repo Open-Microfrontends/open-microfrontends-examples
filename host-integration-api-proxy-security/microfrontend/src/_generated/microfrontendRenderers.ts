@@ -39,4 +39,4 @@ export type Microfrontend1RenderFunction = OpenMicrofrontendsRendererFunction<
 >;
 
 export const Microfrontend1RenderFunctionName =
-  "startMinimalApiProxyMicrofrontend";
+  "startApiProxySecurityMicrofrontend";
