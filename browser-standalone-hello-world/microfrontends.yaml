@@ -9,7 +9,7 @@ microfrontends:
     js:
       moduleSystem: ESM
       initial:
-        - app1.js
+        - Microfrontend.js
   rendererFunctionName: startBrowserStandaloneHelloWorldMicrofrontend
   config:
     schema:

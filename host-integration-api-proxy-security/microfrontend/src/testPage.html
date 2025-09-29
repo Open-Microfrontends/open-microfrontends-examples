@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <script src="/app1.js" type="module"></script>
+    </head>
+    <body>
+        <h1>Microfrontend Test Page</h1>
+        <div id="root"></div>
+
+        <script>
+            (async () => {
+                const host = document.getElementById('root');
+                await import('/public/Microfrontend.js');
+                window.startApiProxySecurityMicrofrontend(host, {
+                        config: {
+                            customerId: '1000',
+                        },
+                        apiProxyPaths: {
+                            bff: '/api',
+                        },
+                        messageBus: {
+                            subscribe: () => {},
+                            unsubscribe: () => {},
+                            publish: () => {
+                                alert('ping');
+                            },
+                        },
+                    });
+            })();
+        </script>
+    </body>
+</html>

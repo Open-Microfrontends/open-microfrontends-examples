@@ -14,7 +14,7 @@ microfrontends:
     js:
       moduleSystem: ESM
       initial:
-      - app.js
+      - Microfrontend.js
   rendererFunctionName: startApiProxySecurityMicrofrontend
   apiProxies:
     bff:

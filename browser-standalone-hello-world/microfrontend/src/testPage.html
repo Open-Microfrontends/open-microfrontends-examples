@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <script src="/app1.js" type="module"></script>
+    </head>
+    <body>
+        <h1>Microfrontend Test Page</h1>
+        <div id="root"></div>
+
+        <script>
+            (async () => {
+                const host = document.getElementById('root');
+                const starter = (await import('/Microfrontend.js')).default.startBrowserStandaloneHelloWorldMicrofrontend;
+                    starter(host, {
+                        config: {
+                            welcomeMessage: 'Hello World!',
+                        },
+                        messageBus: {
+                            subscribe: () => {},
+                            unsubscribe: () => {},
+                            publish: () => {
+                                alert('ping');
+                            },
+                        }
+                    });
+            })();
+        </script>
+    </body>
+</html>

@@ -19,7 +19,13 @@ If you update it you have to run ```npm run generate``` in all submodules.
     npm i
     npm start
 
- The Microfrontend resources will be served under http://localhost:7800
+The Microfrontend resources will be served under http://localhost:7800
+
+For local development run 
+
+    npm run dev
+
+and open http://localhost:7800/testPage.html
 
 ### Start the Application Host
 

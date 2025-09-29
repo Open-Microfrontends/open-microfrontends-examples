@@ -85,7 +85,7 @@ export async function startOpenMicrofrontendsExampleBrowserStandaloneHelloWorld(
   const addedElements: Array<HTMLElement> = [];
   const exportedModules: Array<any> = [];
 
-  const jsUrls = [toFullUrl(serverUrl, "/", "app1.js")];
+  const jsUrls = [toFullUrl(serverUrl, "/", "Microfrontend.js")];
 
   // Load initial modules consecutively (ESM)
   try {

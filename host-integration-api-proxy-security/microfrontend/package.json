@@ -14,12 +14,14 @@
     "@open-microfrontends/open-microfrontends-generator": "file:../../../open-microfrontends-generator",
     "cpy-cli": "^6.0.0",
     "typescript": "^5.9.2",
-    "@types/express": "^5.0.3"
+    "@types/express": "^5.0.3",
+    "nodemon": "^3.1.10"
   },
   "scripts": {
     "generate": "omg ../microfrontends.yaml src/_generated -t renderers",
     "type-check": "tsc --noEmit",
     "build": "tsc && cpy ../microfrontends.yaml dist --flat",
-    "start": "npm run build && node dist/server"
+    "start": "npm run build && node dist/server",
+    "dev": "NODE_ENV=local nodemon --watch src --ext ts,html --exec \"npm run build && cpy src/testPage.html dist --flat && node dist/server\""
   }
 }

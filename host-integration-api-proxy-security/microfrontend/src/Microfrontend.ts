@@ -15,15 +15,15 @@ const customerTemplate = (customerId: string, lastName: string, firstName: strin
     return `
         <table>
            <tr>
-               <th>ID</th>
+               <th style="text-align: left; padding: 2px 5px 2px 0;">ID</th>
                <td>${customerId}</td>
            </tr>
            <tr>
-               <th>Last Name</th>
+               <th style="text-align: left; padding: 2px 5px 2px 0;">Last Name</th>
                <td>${lastName}</td>
            </tr>
            <tr>
-               <th>First Name</th>
+               <th style="text-align: left; padding: 2px 5px 2px 0;">First Name</th>
                <td>${firstName}</td>
            </tr>
        </table>

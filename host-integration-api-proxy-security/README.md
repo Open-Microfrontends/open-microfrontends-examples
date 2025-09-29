@@ -20,6 +20,12 @@ If you update it you have to run ```npm run generate``` in all submodules.
 
 The Microfrontend resources will be served under http://localhost:7820
 
+For local development run
+
+    npm run dev
+
+and open http://localhost:7820/test
+
 ### Start the Express Application Host
 
 **TODO**

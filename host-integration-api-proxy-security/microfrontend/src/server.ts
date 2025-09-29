@@ -6,16 +6,10 @@ const PORT = 7820;
 
 const app = express();
 
-// Security middleware
-app.use((req, res, next) => {
-    if (process.env.NODE_ENV === 'production') {
-        if (req.headers['x-api-key'] !== '123456') {
-            res.sendStatus(401);
-            return;
-        }
-    }
-    next();
-});
+// Test Page
+if (process.env.NODE_ENV === 'local') {
+    app.use('/test', express.static(resolve(import.meta.dirname, 'testPage.html')));
+}
 
 // BFF API
 app.use('/api', api);
