@@ -7,12 +7,11 @@ This example consists of:
    The Microfrontends use SystemJS and an importMap to share vendor libraries and use different builders (Webpack, Vite).
  * A browser-based Application Host (the Microfrontends don't require any specific server-side code)
 
-
 There are two independent Microfrontend descriptions:
  *  [microfrontends1.yaml](./microfrontends1.yaml)
  *  [microfrontends2.yaml](./microfrontends2.yaml)
 
-If you update one of them you have to run ```npm run generate``` in all submodules.
+If you update one of them, you have to run ```npm run generate``` in all submodules.
 
 ## Usage
 
@@ -22,7 +21,11 @@ If you update one of them you have to run ```npm run generate``` in all submodul
     npm i
     npm start
 
- The Microfrontend resources will be served under http://localhost:7810
+The Microfrontend resources will be served under http://localhost:7810
+
+For local development, run this Microfrontend like this:
+
+    npm run dev
 
 ### Start the Microfrontend 2 Server
 
@@ -31,6 +34,10 @@ If you update one of them you have to run ```npm run generate``` in all submodul
     npm start
 
 The Microfrontend resources will be served under http://localhost:7811
+
+For local development, run this Microfrontend like this:
+
+    npm run dev
 
 ### Start the Application Host
 
