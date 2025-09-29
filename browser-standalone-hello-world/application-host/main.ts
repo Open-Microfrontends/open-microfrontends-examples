@@ -1,16 +1,16 @@
-import {startOpenMicrofrontendsExampleMinimal} from './_generated/microfrontendStarters.js';
+import {startOpenMicrofrontendsExampleBrowserStandaloneHelloWorld} from './_generated/microfrontendStarters.js';
 
 console.info('Starting Microfrontend in container #root');
 
 const host = document.getElementById('root');
 
 const start = async () => {
-    const {close, messages} = await startOpenMicrofrontendsExampleMinimal('http://localhost:7890', host, {
-        // id: '1',
+    const {close, messages} = await startOpenMicrofrontendsExampleBrowserStandaloneHelloWorld('http://localhost:7890', host, {
+        id: '1',
         // lang: 'en',
         // user,
         config: {
-            welcomeMessage: 'Microfrontend Demo!',
+            welcomeMessage: 'Hello World!',
         },
         messageBus: (window as any).globalMessageBus,
     });

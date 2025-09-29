@@ -3,14 +3,14 @@ servers:
 - url: 'http://localhost:7890'
   description: Local Test Server
 microfrontends:
-- name: OpenMicrofrontends Example Minimal
-  resources:
+- name: OpenMicrofrontends Example Browser Standalone Hello World
+  assets:
+    basePath: /
     js:
-    # Extension needs to be mjs because it is a module
-    - app1.mjs
-  paths:
-    resourcesBase: /
-  globalLaunchFunction: startMinimalMicrofrontend
+      moduleSystem: ESM
+      initial:
+        - app1.js
+  rendererFunctionName: startBrowserStandaloneHelloWorldMicrofrontend
   config:
     schema:
       type: object

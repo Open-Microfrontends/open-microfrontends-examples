@@ -2,18 +2,25 @@ openMicrofrontends: 1.0.0
 servers:
 - url: 'http://localhost:7891'
   description: Local Test Server
+securitySchemes:
+  ApiKeyAuth:
+    type: apiKey
+    in: header
+    name: X-API-KEY
 microfrontends:
 - name: OpenMicrofrontends Example API Proxy
-  resources:
+  assets:
+    basePath: /public
     js:
-    # Extension needs to be mjs because it is a module
-    - app.mjs
-  paths:
-    resourcesBase: /public
-  globalLaunchFunction: startMinimalApiProxyMicrofrontend
+      moduleSystem: ESM
+      initial:
+      - app.js
+  rendererFunctionName: startMinimalApiProxyMicrofrontend
   apiProxies:
-    # Frameworks must prepend the URL of the Microfrontend server here (if this is a relative path)
-    bff: /api
+    bff:
+      url: /api
+      security:
+      - ApiKeyAuth: [ ]
   config:
     schema:
       type: object

@@ -7,7 +7,8 @@ Working examples of [OpenMicrofrontends](https://www.open-microfrontends.org) ba
 
 ## Examples
 
-| Folder                   | Description                                                                                                 |
-|--------------------------|-------------------------------------------------------------------------------------------------------------|
-| [minimal](./minimal)     | A minimal Microfrontend that can be hosted in a browser and doesn't need any server routes on the host side |
-| [api-proxy](./api-proxy) | Demonstrates API proxies that must be provided by the host server                                           |
+| Folder                                                                       | Description                                                                                                 |
+|------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------|
+| [browser-standalone-hello-world](./browser-standalone-hello-world)           | A minimal Microfrontend that can be hosted in a browser and doesn't need any server routes on the host side |
+| [browser-standalone-shared-libraries](./browser-standalone-shared-libraries) | Two small React Apps that share the vendor libraries                                                        |
+| [api-proxy-and-security](./api-proxy-and-security)                           | Demonstrates API proxies that must be provided by the host server                                           |

@@ -1,0 +1,25 @@
+{
+  "name": "@open-microfrontends/examples-api-proxy-and-security-microfrontend",
+  "version": "1.0.0",
+  "type": "module",
+  "private": true,
+  "engines": {
+    "node": ">=22"
+  },
+  "dependencies": {
+    "express": "^5.1.0"
+  },
+  "devDependencies": {
+    "@open-microfrontends/types": "file:../../../open-microfrontends/packages/types",
+    "@open-microfrontends/open-microfrontends-generator": "file:../../../open-microfrontends-generator",
+    "cpy-cli": "^6.0.0",
+    "typescript": "^5.9.2",
+    "@types/express": "^5.0.3"
+  },
+  "scripts": {
+    "generate": "omg ../microfrontends.yaml src/_generated -t renderers",
+    "type-check": "tsc --noEmit",
+    "build": "tsc && cpy ../microfrontends.yaml dist --flat",
+    "start": "npm run build && node dist/server"
+  }
+}

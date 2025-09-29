@@ -1,4 +1,4 @@
-import {onRenderOpenMicrofrontendsExampleMinimal} from './_generated/microfrontendRenderers.js';
+import {Microfrontend1RenderFunction, Microfrontend1RenderFunctionName} from './_generated/microfrontendRenderers.js';
 
 const template = (helloWorldMessage: string) => {
     return `
@@ -12,7 +12,7 @@ const template = (helloWorldMessage: string) => {
     `;
 };
 
-onRenderOpenMicrofrontendsExampleMinimal(async (host, context) => {
+const renderFn: Microfrontend1RenderFunction = async (host, context) => {
     const {config, messageBus} = context;
     let count = 0;
 
@@ -42,4 +42,8 @@ onRenderOpenMicrofrontendsExampleMinimal(async (host, context) => {
             host.innerHTML = '';
         }
     }
-});
+};
+
+export default {
+    [Microfrontend1RenderFunctionName]: renderFn,
+};

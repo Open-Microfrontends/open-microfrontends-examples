@@ -1,4 +1,4 @@
-import {onRenderMinimalAPIProxyMicrofrontend} from './_generated/microfrontendRenderers.js';
+import {Microfrontend1RenderFunction, Microfrontend1RenderFunctionName} from './_generated/microfrontendRenderers.js';
 
 const mainTemplate = (customerId: string) => {
     return `
@@ -30,7 +30,7 @@ const customerTemplate = (customerId: string, lastName: string, firstName: strin
     `;
 }
 
-onRenderMinimalAPIProxyMicrofrontend(async (host, context) => {
+const renderFn: Microfrontend1RenderFunction = async (host, context) => {
     const {config, apiProxyPaths} = context;
 
     const tpl = document.createElement('template');
@@ -57,4 +57,6 @@ onRenderMinimalAPIProxyMicrofrontend(async (host, context) => {
             host.innerHTML = '';
         }
     }
-});
+};
+
+window[Microfrontend1RenderFunctionName] = renderFn;
