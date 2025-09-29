@@ -1,0 +1,33 @@
+{
+  "name": "@open-microfrontends/examples-browser-standalone-shared-libraries-microfrontend2",
+  "version": "1.0.0",
+  "type": "module",
+  "private": true,
+  "engines": {
+    "node": ">=22"
+  },
+  "dependencies": {
+    "http-server": "^14.1.1"
+  },
+  "devDependencies": {
+    "@open-microfrontends/types": "file:../../../open-microfrontends/packages/types",
+    "@open-microfrontends/open-microfrontends-generator": "file:../../../open-microfrontends-generator",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "cpy-cli": "^6.0.0",
+    "typescript": "^5.9.2",
+    "@types/react": "^19.1.15",
+    "@types/react-dom": "^19.1.9",
+    "vite": "^7.1.7",
+    "vite-plugin-html": "^3.2.2",
+    "@vitejs/plugin-react": "^5.0.4",
+    "sass-embedded": "^1.93.2"
+  },
+  "scripts": {
+    "generate": "omg ../microfrontends2.yaml src/_generated -t renderers",
+    "type-check": "tsc --noEmit",
+    "build": "vite build && cpy ../microfrontends1.yaml dist --rename=microfrontends.yaml --flat",
+    "dev": "vite dev --config vite.config.dev.ts",
+    "start": "npm run build && http-server dist -p 7811 --cors -c-1"
+  }
+}

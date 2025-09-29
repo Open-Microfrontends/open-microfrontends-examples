@@ -1,0 +1,39 @@
+openMicrofrontends: 1.0.0
+servers:
+- url: 'http://localhost:7810'
+  description: Local Test Server
+microfrontends:
+- name: OpenMicrofrontends Example Browser Standalone Shared Libraries 1
+  assets:
+    basePath: /
+    js:
+      moduleSystem: SystemJS
+      importMap:
+        imports:
+          react: https://ga.system.jspm.io/npm:react@19.1.1/index.js
+          react-dom: https://ga.system.jspm.io/npm:react-dom@19.1.1/index.js
+          react-dom/client: https://ga.system.jspm.io/npm:react-dom@19.1.1/client.js
+          scheduler: https://ga.system.jspm.io/npm:scheduler@0.26.0/index.js
+          process: https://ga.system.jspm.io/npm:process@0.11.10/browser.js
+      initial:
+        - Microfrontend1.js
+  rendererFunctionName: startBrowserStandaloneSharedLibrariesMicrofrontend1
+  config:
+    schema:
+      type: object
+      properties:
+        welcomeMessage:
+          type: string
+      required: [ "welcomeMessage" ]
+    default:
+      welcomeMessage: Hello World!
+  messages:
+    ping:
+      publish: true
+      subscribe: true
+      schema:
+        type: object
+        properties:
+          ping:
+            const: true
+        required: [ "ping" ]

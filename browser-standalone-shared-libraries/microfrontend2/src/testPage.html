@@ -1,0 +1,26 @@
+<html>
+    <head>
+    </head>
+    <body>
+        <h1>Microfrontend 2 Test Page</h1>
+        <div id="root"></div>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const host = document.getElementById('root');
+                window.startBrowserStandaloneSharedLibrariesMicrofrontend2(host, {
+                    config: {
+                        welcomeMessage: 'Hello World 2!',
+                    },
+                    messageBus: {
+                        subscribe: () => {},
+                        unsubscribe: () => {},
+                        publish: () => {
+                            alert('ping');
+                        },
+                    }
+                });
+            });
+        </script>
+    </body>
+</html>
