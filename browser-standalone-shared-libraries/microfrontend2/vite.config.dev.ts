@@ -1,22 +1,17 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
-import { createHtmlPlugin } from 'vite-plugin-html'
 
 export default defineConfig({
     build: {
         rollupOptions: {
-            input: "src/index.tsx",
+            input: "src/testPage.html",
         }
     },
     plugins: [
-        react(),
-        createHtmlPlugin({
-            template: 'src/testPage.html',
-            entry: 'src/index.tsx',
-        })
+        react()
     ],
     server: {
         port: 7811,
-        open: true,
+        open: "src/testPage.html",
     }
 });
