@@ -1,13 +1,16 @@
 
 # OpenMicrofrontends Example SSR
 
-This example consists of:
+This demo consists of:
 
- * A Vue.js Microfrontend with a SSR route
- * A Express based Application Host
+ * A Vue.js Microfrontend with an SSR route
+ * An Express-based Application Host
 
-The spec file is [microfrontends.yaml](./microfrontends.yaml).
-If you update it you have to run ```npm run generate``` in all submodules.
+Notes: 
+
+ * Vite is used as a build tool for the Microfrontend (emits ES modules)
+ * The spec file is [microfrontends.yaml](./microfrontends.yaml).
+   If you update it you have to run ```npm run generate``` in all submodules.
 
 ## Usage
 
