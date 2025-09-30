@@ -27,7 +27,7 @@
     "generate": "omg ../microfrontends2.yaml src/_generated -t renderers",
     "type-check": "tsc --noEmit",
     "build": "vite build && cpy ../microfrontends1.yaml dist --rename=microfrontends.yaml --flat",
-    "dev": "vite dev --config vite.config.dev.ts",
+    "dev": "vite serve --config vite.config.dev.ts",
     "start": "npm run build && http-server dist -p 7811 --cors -c-1"
   }
 }

@@ -6,9 +6,6 @@ export default defineConfig({
     build: {
         rollupOptions: {
             input: "src/index.tsx",
-            output: {
-                format: "iife",
-            },
         }
     },
     plugins: [
