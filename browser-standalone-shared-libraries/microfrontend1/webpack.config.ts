@@ -1,5 +1,7 @@
 import {resolve} from 'path';
 import type {Configuration} from 'webpack';
+import HtmlWebpackPlugin from "html-webpack-plugin";
+import 'webpack-dev-server';
 
 const microfrontend1: Configuration = {
     entry: './src',
@@ -47,7 +49,23 @@ const microfrontend1: Configuration = {
     },
     resolve: {
         extensions: ['.js', '.ts', '.tsx'],
-    }
+    },
+    plugins: [
+        new HtmlWebpackPlugin({
+            template: 'src/testPage.html'
+        })
+    ],
+    devServer: {
+        port: 7810,
+        static: 'src/dev',
+        open: true,
+        client: {
+            overlay: {
+                errors: true,
+                warnings: false,
+            },
+        }
+    },
 };
 
 export default [

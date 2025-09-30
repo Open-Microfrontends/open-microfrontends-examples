@@ -1,15 +1,17 @@
 
 # OpenMicrofrontends Example Browser Standalone Hello World
 
-This example consists of:
+This demo consists of:
 
  * A pure ES Microfrontend that shows a welcome message and sends and receives ping messages
  * A browser-based Application Host (the Microfrontend doesn't require any specific server-side code)
 
-The implementation only depends on *Node.js* and doesn't use any bundlers.
+Notes:
 
-The *OpenMicrofrontend* description is in [microfrontends.yaml](./microfrontends.yaml).
-If you update it you have to run ```npm run generate``` in all submodules.
+  * TypeScript is used for transpiling to ES modules, no bundlers are involved
+  * The Microfrontend exports the render function (so it is not globally available)
+  * The *OpenMicrofrontend* description is in [microfrontends.yaml](./microfrontends.yaml). 
+    If you update it you have to run ```npm run generate``` in all submodules.
 
 ## Usage
 

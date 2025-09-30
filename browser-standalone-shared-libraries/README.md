@@ -1,15 +1,17 @@
 
 # OpenMicrofrontends Example Browser Standalone Shared Libraries
 
-This example consists of:
+This demo consists of:
 
- * Two small React Microfrontends that show a welcome message and send and receive ping messages.
-   The Microfrontends use SystemJS and an importMap to share vendor libraries and use different builders (Webpack, Vite).
+ * Two small React Microfrontends that show a welcome message and send and receive ping messages
  * A browser-based Application Host (the Microfrontends don't require any specific server-side code)
 
-There are two independent Microfrontend descriptions:
- *  [microfrontends1.yaml](./microfrontends1.yaml)
- *  [microfrontends2.yaml](./microfrontends2.yaml)
+Notes:
+ * Webpack and Vite are used to bundle the Microfrontends to SystemJS modules
+ * Microfrontend 1 exports the render function, Microfrontend 2 adds it as a global (window) variable
+ * There are two independent Microfrontend descriptions:
+   *  [microfrontends1.yaml](./microfrontends1.yaml)
+   *  [microfrontends2.yaml](./microfrontends2.yaml)
 
 If you update one of them, you have to run ```npm run generate``` in all submodules.
 

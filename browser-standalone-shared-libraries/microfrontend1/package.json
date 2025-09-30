@@ -33,7 +33,7 @@
     "generate": "omg ../microfrontends1.yaml src/_generated -t renderers",
     "type-check": "tsc --noEmit",
     "build": "NODE_OPTIONS='--loader ts-node/esm' webpack --mode=production && cpy ../microfrontends1.yaml dist --rename=microfrontends.yaml --flat",
-    "dev": "NODE_OPTIONS='--loader ts-node/esm' webpack serve --config ./webpack.config.dev.ts --mode=development",
+    "dev": "NODE_OPTIONS='--loader ts-node/esm' webpack serve --mode=development",
     "start": "npm run build && http-server dist -p 7810 --cors -c-1"
   }
 }

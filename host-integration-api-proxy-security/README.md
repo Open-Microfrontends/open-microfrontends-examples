@@ -7,8 +7,13 @@ This example consists of:
  * A [Express](https://expressjs.com) based Application Host
  * A [Spring Boot](https://spring.io/projects/spring-boot) based Application Host
 
-The *OpenMicrofrontend* description is in [microfrontends.yaml](./microfrontends.yaml).
-If you update it you have to run ```npm run generate``` in all submodules. 
+Notes: 
+
+ * TypeScript is used for transpiling to ES modules, no bundlers are involved
+ * The Microfrontend adds the render function as global (window) variable
+ * The *OpenMicrofrontend* description is in [microfrontends.yaml](./microfrontends.yaml). 
+   If you update it you have to run ```npm run generate``` in all submodules.
+  
 
 ## Usage
 

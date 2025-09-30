@@ -18,4 +18,8 @@ export default defineConfig({
             entry: 'src/index.tsx',
         })
     ],
+    server: {
+        port: 7811,
+        open: true,
+    }
 });

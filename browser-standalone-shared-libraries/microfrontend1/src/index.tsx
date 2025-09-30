@@ -21,4 +21,6 @@ const renderFn: Microfrontend1RenderFunction = async (host, context) => {
     }
 }
 
-(window as any)[Microfrontend1RenderFunctionName] = renderFn;
+export default {
+    [Microfrontend1RenderFunctionName]: renderFn,
+};
