@@ -3,11 +3,11 @@
 
 This demo consists of:
 
- * Two small React Microfrontends that show a welcome message and send and receive ping messages
+ * Two small [React](https://react.dev) Microfrontends that show a welcome message and send and receive ping messages
  * A browser-based Application Host (the Microfrontends don't require any specific server-side code)
 
 Notes:
- * Webpack and Vite are used to bundle the Microfrontends to SystemJS modules
+ * [Webpack](https://webpack.js.org) and [Vite](https://vite.dev) are used to bundle the Microfrontends to SystemJS modules
  * The Vite-based build uses a separate config for local development based on ES modules because *vite serve* doesn't support SystemJS properly
  * Microfrontend 1 exports the render function, Microfrontend 2 adds it as a global (window) variable
  * There are two independent Microfrontend descriptions:

@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <script type="module" src="index.ts"></script>
+    </head>
+    <body>
+        <h1>Microfrontend Test Page</h1>
+        <div id="root"></div>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const host = document.getElementById('root');
+                window.startBrowserStandaloneCodeSplittingMicrofrontend(host, {
+                    config: {
+                        welcomeMessage: 'Hello World!',
+                    },
+                    messageBus: {
+                        subscribe: () => {},
+                        unsubscribe: () => {},
+                        publish: () => {
+                            alert('ping');
+                        },
+                    }
+                });
+            });
+        </script>
+    </body>
+</html>

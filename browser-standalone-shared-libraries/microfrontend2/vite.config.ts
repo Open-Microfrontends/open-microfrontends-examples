@@ -5,11 +5,13 @@ export default defineConfig({
     build: {
         sourcemap: true,
         rollupOptions: {
-            input: "src/index.tsx",
+            input: {
+                Microfrontend2: 'src/index.tsx'
+            },
             output: {
-                format: "system",
+                format: 'system',
                 dir: 'dist',
-                entryFileNames: 'Microfrontend2.js',
+                entryFileNames: '[name].js',
             },
             external: ['react', 'react-dom', 'react-dom/client'],
         }

@@ -10,7 +10,7 @@ This example consists of:
 Notes: 
 
  * TypeScript is used for transpiling to ES modules, no bundlers are involved
- * The Microfrontend adds the render function as global (window) variable
+ * The Microfrontend adds the render function as a global (window) variable
  * The *OpenMicrofrontend* description is in [microfrontends.yaml](./microfrontends.yaml). 
    If you update it you have to run ```npm run generate``` in all submodules.
   

@@ -1,0 +1,28 @@
+{
+  "name": "@open-microfrontends/examples-browser-standalone-code-spitting-microfrontend",
+  "version": "1.0.0",
+  "type": "module",
+  "private": true,
+  "engines": {
+    "node": ">=22"
+  },
+  "dependencies": {
+    "http-server": "^14.1.1"
+  },
+  "devDependencies": {
+    "@open-microfrontends/types": "file:../../../open-microfrontends/packages/types",
+    "@open-microfrontends/open-microfrontends-generator": "file:../../../open-microfrontends-generator",
+    "cpy-cli": "^6.0.0",
+    "typescript": "^5.9.2",
+    "svelte": "^5.39.7",
+    "vite": "^7.1.7",
+    "@sveltejs/vite-plugin-svelte": "^6.2.1"
+  },
+  "scripts": {
+    "generate": "omg ../microfrontends.yaml src/_generated -t renderers",
+    "type-check": "tsc --noEmit",
+    "build": "vite build && cpy ../microfrontends.yaml dist --flat",
+    "start": "npm run build && http-server dist -p 7850 --cors -c-1",
+    "dev": "vite serve"
+  }
+}

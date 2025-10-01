@@ -1,0 +1,34 @@
+openMicrofrontends: 1.0.0
+servers:
+- url: 'http://localhost:7850'
+  description: Local Test Server
+microfrontends:
+- name: OpenMicrofrontends Example Browser Standalone Code Splitting
+  assets:
+    basePath: /
+    js:
+      moduleSystem: ESM
+      initial:
+        - Microfrontend.js
+    css:
+      - Microfrontend.css
+  rendererFunctionName: startBrowserStandaloneCodeSplittingMicrofrontend
+  config:
+    schema:
+      type: object
+      properties:
+        welcomeMessage:
+          type: string
+      required: [ "welcomeMessage" ]
+    default:
+      welcomeMessage: Hello World!
+  messages:
+    ping:
+      publish: true
+      subscribe: true
+      schema:
+        type: object
+        properties:
+          ping:
+            const: true
+        required: [ "ping" ]

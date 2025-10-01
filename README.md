@@ -3,13 +3,15 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-Working examples of [OpenMicrofrontends](https://www.open-microfrontends.org) based Microfrontends and host integrations.
+Working examples of [OpenMicrofrontends](https://www.open-microfrontends.org) compliant Microfrontends and host integrations.
 
 ## Examples
 
-| Folder                                                                       | Description                                                                                                                 |
-|------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------|
-| [browser-standalone-hello-world](./browser-standalone-hello-world)           | A minimal Microfrontend that can be hosted in a browser and doesn't need any server routes on the host side                 |
-| [browser-standalone-shared-libraries](./browser-standalone-shared-libraries) | Two small [React](https://react.dev) Apps that share the vendor libraries                                                   |
-| [host-integration-api-proxy-security](./host-integration-api-proxy-security) | A minimal Microfrontend that requests an API Proxy that requires an API Key. This example includes a JS and a Java backend. |
-| [host-integration-ssr](./host-integration-ssr)                               | A small [Vue.js](https://vuejs.org) App with server-side rendering                                                          |
+| Folder                                                                       | Description                                                                                                                          |
+|------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------|
+| [browser-standalone-hello-world](./browser-standalone-hello-world)           | A minimal, pure ES Microfrontend that can be hosted in a browser and doesn't need any server routes on the host side                 |
+| [browser-standalone-shared-libraries](./browser-standalone-shared-libraries) | Two small [React](https://react.dev) Microfrontends that share vendor libraries                                                      |
+| [browser-standalone-code-splitting](./browser-standalone-code-splitting)     | A small [Svelte](https://svelte.dev) Microfrontend that dynamically loads components (code splitting)                                |
+| [browser-standalone-routing](./browser-standalone-routing)                   | A [React](https://react.dev) Microfrontend and a [Vue.js](https://vuejs.org) Microfrontend with routes put together on a single page |
+| [host-integration-api-proxy-security](./host-integration-api-proxy-security) | A pure ES Microfrontend that requests an API Proxy that requires an API Key. This example includes a JS and a Java backend.          |
+| [host-integration-ssr](./host-integration-ssr)                               | A small [Vue.js](https://vuejs.org) Microfrontend with server-side rendering                                                         |

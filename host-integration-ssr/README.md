@@ -3,12 +3,12 @@
 
 This demo consists of:
 
- * A Vue.js Microfrontend with an SSR route
+ * A [Vue.js](https://vuejs.org) Microfrontend with an SSR route
  * An Express-based Application Host
 
 Notes: 
 
- * Vite is used as a build tool for the Microfrontend (emits ES modules)
+ * [Webpack](https://webpack.js.org) is used as a build tool for the Microfrontend (emits ES modules)
  * The spec file is [microfrontends.yaml](./microfrontends.yaml).
    If you update it you have to run ```npm run generate``` in all submodules.
 
