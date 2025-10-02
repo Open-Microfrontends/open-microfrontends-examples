@@ -37,6 +37,10 @@ export interface Microfrontend1Config {
   routePrefix: string;
 }
 
+/* Asset query timestamp for cache busting */
+
+const assetTimestamp = Math.floor(Date.now() / 10000) * 10;
+
 /* Type Parameters */
 
 type Microfrontend1Permissions = undefined;
@@ -74,9 +78,14 @@ export async function startOpenMicrofrontendsExampleBrowserStandaloneRouting2(
 
   // Add stylesheets
 
-  addCssLinkTag(toFullUrl(serverUrl, "/", "Microfrontend2.css"), addedElements);
+  addCssLinkTag(
+    toFullUrl(serverUrl, "/", `Microfrontend2.css?v=${assetTimestamp}`),
+    addedElements,
+  );
 
-  const jsUrls = [toFullUrl(serverUrl, "/", "Microfrontend2.js")];
+  const jsUrls = [
+    toFullUrl(serverUrl, "/", `Microfrontend2.js?v=${assetTimestamp}`),
+  ];
 
   // Load initial modules consecutively (ESM)
   try {

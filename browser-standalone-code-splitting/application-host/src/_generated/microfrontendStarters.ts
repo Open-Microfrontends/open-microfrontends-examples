@@ -43,6 +43,10 @@ export interface Microfrontend1TopicPing {
   [k: string]: unknown;
 }
 
+/* Asset query timestamp for cache busting */
+
+const assetTimestamp = Math.floor(Date.now() / 10000) * 10;
+
 /* Type Parameters */
 
 type Microfrontend1Permissions = undefined;
@@ -87,9 +91,14 @@ export async function startOpenMicrofrontendsExampleBrowserStandaloneCodeSplitti
 
   // Add stylesheets
 
-  addCssLinkTag(toFullUrl(serverUrl, "/", "Microfrontend.css"), addedElements);
+  addCssLinkTag(
+    toFullUrl(serverUrl, "/", `Microfrontend.css?v=${assetTimestamp}`),
+    addedElements,
+  );
 
-  const jsUrls = [toFullUrl(serverUrl, "/", "Microfrontend.js")];
+  const jsUrls = [
+    toFullUrl(serverUrl, "/", `Microfrontend.js?v=${assetTimestamp}`),
+  ];
 
   // Load initial modules consecutively (ESM)
   try {

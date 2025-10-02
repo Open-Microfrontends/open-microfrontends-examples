@@ -76,6 +76,10 @@ export interface Microfrontend1TopicPing {
   [k: string]: unknown;
 }
 
+/* Asset query timestamp for cache busting */
+
+const assetTimestamp = Math.floor(Date.now() / 10000) * 10;
+
 /* Type Parameters */
 
 type Microfrontend1Permissions = undefined;
@@ -118,7 +122,9 @@ export async function startOpenMicrofrontendsExampleBrowserStandaloneSharedLibra
   const addedElements: Array<HTMLElement> = [];
   const exportedModules: Array<any> = [];
 
-  const jsUrls = [toFullUrl(serverUrl, "/", "Microfrontend1.js")];
+  const jsUrls = [
+    toFullUrl(serverUrl, "/", `Microfrontend1.js?v=${assetTimestamp}`),
+  ];
 
   // Load initial modules consecutively (SystemJS)
   if (typeof System === "undefined") {
@@ -126,9 +132,8 @@ export async function startOpenMicrofrontendsExampleBrowserStandaloneSharedLibra
       '[OpenMicrofrontends] Microfrontend "OpenMicrofrontends Example Browser Standalone Shared Libraries 1" requires SystemJS but is not available!',
     );
   }
-  const moduleUrls = [toFullUrl(serverUrl, "/", "Microfrontend1.js")];
 
-  installSystemJSImportMap(moduleUrls, {
+  installSystemJSImportMap(jsUrls, {
     imports: {
       react: "https://ga.system.jspm.io/npm:react@19.1.1/index.js",
       "react-dom": "https://ga.system.jspm.io/npm:react-dom@19.1.1/index.js",
