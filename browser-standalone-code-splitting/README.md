@@ -10,6 +10,7 @@ Notes:
 
   * [Vite](https://vite.dev) is used for bundling the Microfrontend (all chunks are ES modules)
   * It is **very import** to set a relative base path for assets (e.g., in *Vite* this is done by setting ```base: ''```)
+  * It is also important that all chunks except the entries have the hash in their name for cache busting
   * The Microfrontend exports the render function as a global (window) variable (because Vite expects a <script> tag and does not allow dynamic imports)
   * The *OpenMicrofrontend* description is in [microfrontends.yaml](./microfrontends.yaml). 
     If you update it you have to run ```npm run generate``` in all submodules.

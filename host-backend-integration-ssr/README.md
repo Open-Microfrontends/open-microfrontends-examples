@@ -1,5 +1,5 @@
 
-# OpenMicrofrontends Example SSR
+# OpenMicrofrontends Example Host Backend Integration SSR
 
 This demo consists of:
 

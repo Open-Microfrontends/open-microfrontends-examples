@@ -52,7 +52,7 @@ const microfrontend1: Configuration = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: 'src/testPage.html'
+            template: 'testPage.html'
         })
     ],
     devServer: {

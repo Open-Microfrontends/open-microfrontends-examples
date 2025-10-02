@@ -1,5 +1,5 @@
 {
-  "name": "@open-microfrontends/examples-host-integration-api-proxy-security-microfrontend",
+  "name": "@open-microfrontends/examples-host-backend-integration-api-proxy-security-microfrontend",
   "version": "1.0.0",
   "type": "module",
   "private": true,
@@ -22,6 +22,6 @@
     "type-check": "tsc --noEmit",
     "build": "tsc && cpy ../microfrontends.yaml dist --flat",
     "start": "npm run build && node dist/server",
-    "dev": "NODE_ENV=local nodemon --watch src --ext ts,html --exec \"npm run build && cpy src/testPage.html dist --flat && node dist/server\""
+    "dev": "NODE_ENV=local nodemon --watch src --ext ts,html --exec \"npm run build && cpy testPage.html dist --flat && node dist/server\""
   }
 }

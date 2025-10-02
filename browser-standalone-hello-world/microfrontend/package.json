@@ -22,6 +22,6 @@
     "type-check": "tsc --noEmit",
     "build": "tsc && cpy ../microfrontends.yaml dist --flat",
     "start": "npm run build && http-server dist -p 7800 --cors -c-1",
-    "dev": "nodemon --watch src --ext ts,html --exec \"npm run build && cpy src/testPage.html dist --flat && http-server dist -p 7800 --cors -c-1\""
+    "dev": "nodemon --watch src --ext ts,html --exec \"npm run build && cpy testPage.html dist --flat && http-server dist -p 7800 --cors -c-1\""
   }
 }

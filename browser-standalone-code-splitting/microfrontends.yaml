@@ -19,7 +19,8 @@ microfrontends:
       properties:
         welcomeMessage:
           type: string
-      required: [ "welcomeMessage" ]
+      required:
+        - welcomeMessage
     default:
       welcomeMessage: Hello World!
   messages:
@@ -31,4 +32,5 @@ microfrontends:
         properties:
           ping:
             const: true
-        required: [ "ping" ]
+        required:
+          - ping

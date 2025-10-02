@@ -6,11 +6,18 @@ export default defineConfig({
     build: {
         rollupOptions: {
             input: {
-                Microfrontend: 'src/testPage.html',
+                Microfrontend: 'testPage.html',
             },
             output: {
                 entryFileNames: '[name].js', // Entry file name needs to be stable (no hash)
-                assetFileNames: '[name].[ext]', // CSS entry file name needs to be stable (no hash)
+                assetFileNames: (chunkInfo) => {
+                    console.info('chunkInfo', chunkInfo);
+                    // CSS entry file name needs to be stable (no hash)
+                    if (chunkInfo.name === 'Microfrontend.css') {
+                        return chunkInfo.name;
+                    }
+                    return '[name]-[hash][extname]';
+                },
                 chunkFileNames: '[name]-[hash].js',
             }
         }
@@ -18,6 +25,6 @@ export default defineConfig({
     plugins: [svelte()],
     server: {
         port: 7850,
-        open: 'src/testPage.html',
+        open: 'testPage',
     }
 })

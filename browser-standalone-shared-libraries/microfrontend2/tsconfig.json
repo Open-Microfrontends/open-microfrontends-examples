@@ -6,6 +6,7 @@
     "strict": true,
     "esModuleInterop": true,
     "moduleResolution": "bundler",
-    "jsx": "react"
+    "jsx": "react",
+    "skipLibCheck": true
   }
 }

@@ -27,7 +27,7 @@ For local development run
 
     npm run dev
 
-and open http://localhost:7800/testPage.html
+and open http://localhost:7800/testPage
 
 ### Start the Application Host
 

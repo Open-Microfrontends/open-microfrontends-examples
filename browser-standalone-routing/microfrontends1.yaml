@@ -1,0 +1,24 @@
+openMicrofrontends: 1.0.0
+servers:
+- url: 'http://localhost:7820'
+  description: Local Test Server
+microfrontends:
+- name: OpenMicrofrontends Example Browser Standalone Routing 1
+  assets:
+    basePath: /
+    js:
+      moduleSystem: ESM
+      initial:
+        - Microfrontend1.js
+  rendererFunctionName: startBrowserStandaloneRoutingMicrofrontend1
+  config:
+    schema:
+      type: object
+      properties:
+        routePrefix:
+          type: string
+      required:
+        - routePrefix
+      additionalProperties: false
+    default:
+      routePrefix: ''

@@ -28,7 +28,8 @@ microfrontends:
         customerId:
           type: string
           description: The customer ID
-      required: [ "customerId" ]
+      required:
+        - customerId
     default:
       customerId: '1000'
   annotations:

@@ -2,7 +2,7 @@ import {Microfrontend1RenderFunction, Microfrontend1RenderFunctionName} from './
 
 const template = (helloWorldMessage: string) => {
     return `
-        <div style="padding: 20px">
+        <div style="margin: 20px">
             <h3>${helloWorldMessage}</h3>
             <button id="ping_button">Send Ping</button>
             <div style="margin-top: 10px;">
