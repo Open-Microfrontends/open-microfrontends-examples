@@ -2,6 +2,7 @@
 # OpenMicrofrontends Examples
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![GitHub CI](https://github.com/open-microfrontends/open-microfrontends-examples/actions/workflows/ci_build_all.yml/badge.svg)](https://github.com/open-microfrontends/open-microfrontends-examples/actions/workflows/ci_build_all.yml)
 
 Working examples of [OpenMicrofrontends](https://www.open-microfrontends.org) compliant Microfrontends and host integrations.
 
