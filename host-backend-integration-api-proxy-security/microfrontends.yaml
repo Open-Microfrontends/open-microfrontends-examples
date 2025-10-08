@@ -18,7 +18,7 @@ microfrontends:
   rendererFunctionName: startApiProxySecurityMicrofrontend
   apiProxies:
     bff:
-      url: /api
+      bffPath: /api
       security:
       - ApiKeyAuth: [ ]
   config:

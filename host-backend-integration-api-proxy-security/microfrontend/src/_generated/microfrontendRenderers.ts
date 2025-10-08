@@ -30,13 +30,14 @@ type Microfrontend1MessagesSubscribe = undefined;
 
 /* Render Function */
 
-export type Microfrontend1RenderFunction = OpenMicrofrontendsRendererFunction<
-  Microfrontend1Config,
-  Microfrontend1Permissions,
-  Microfrontend1ApiProxyPaths,
-  Microfrontend1MessagesPublish,
-  Microfrontend1MessagesSubscribe
->;
+export type OpenMicrofrontendsExampleAPIProxyWithSecurityRenderFunction =
+  OpenMicrofrontendsRendererFunction<
+    Microfrontend1Config,
+    Microfrontend1Permissions,
+    Microfrontend1ApiProxyPaths,
+    Microfrontend1MessagesPublish,
+    Microfrontend1MessagesSubscribe
+  >;
 
-export const Microfrontend1RenderFunctionName =
+export const OpenMicrofrontendsExampleAPIProxyWithSecurityRenderFunctionName =
   "startApiProxySecurityMicrofrontend";

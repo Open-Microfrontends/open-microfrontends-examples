@@ -1,8 +1,8 @@
 import {mount, unmount} from 'svelte';
-import {Microfrontend1RenderFunction, Microfrontend1RenderFunctionName} from './_generated/microfrontendRenderers';
+import {OpenMicrofrontendsExampleBrowserStandaloneCodeSplittingRenderFunction, OpenMicrofrontendsExampleBrowserStandaloneCodeSplittingRenderFunctionName} from './_generated/microfrontendRenderers';
 import Microfrontend from './Microfrontend.svelte';
 
-const renderFn: Microfrontend1RenderFunction = async (host, context) => {
+const renderFn: OpenMicrofrontendsExampleBrowserStandaloneCodeSplittingRenderFunction = async (host, context) => {
     let mf = mount(Microfrontend, {
         target: host,
         props: {
@@ -16,4 +16,4 @@ const renderFn: Microfrontend1RenderFunction = async (host, context) => {
     }
 }
 
-(window as any)[Microfrontend1RenderFunctionName] = renderFn;
+(window as any)[OpenMicrofrontendsExampleBrowserStandaloneCodeSplittingRenderFunctionName] = renderFn;

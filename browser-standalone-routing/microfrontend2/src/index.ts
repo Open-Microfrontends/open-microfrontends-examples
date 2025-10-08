@@ -1,9 +1,9 @@
 import {createApp} from 'vue';
 import Microfrontend2 from './Microfrontend2.vue';
-import {Microfrontend1RenderFunction, Microfrontend1RenderFunctionName} from './_generated/microfrontendRenderers';
+import {OpenMicrofrontendsExampleBrowserStandaloneRouting2RenderFunction, OpenMicrofrontendsExampleBrowserStandaloneRouting2RenderFunctionName} from './_generated/microfrontendRenderers';
 import router from './router';
 
-const renderFn: Microfrontend1RenderFunction = async (host, context) => {
+const renderFn: OpenMicrofrontendsExampleBrowserStandaloneRouting2RenderFunction = async (host, context) => {
     const {config} = context;
 
     const mf = createApp(Microfrontend2, {
@@ -19,4 +19,4 @@ const renderFn: Microfrontend1RenderFunction = async (host, context) => {
     }
 }
 
-(window as any)[Microfrontend1RenderFunctionName] = renderFn;
+(window as any)[OpenMicrofrontendsExampleBrowserStandaloneRouting2RenderFunctionName] = renderFn;
