@@ -23,6 +23,8 @@ type Microfrontend1Permissions = undefined;
 
 type Microfrontend1ApiProxyPaths = {
   readonly bff: string;
+
+  readonly chuckNorrisJoke: string;
 };
 
 type Microfrontend1MessagesPublish = undefined;

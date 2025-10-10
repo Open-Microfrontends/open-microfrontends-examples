@@ -1,7 +1,9 @@
 
 # OpenMicrofrontends Example Browser Standalone Routing
 
-This demo consists of:
+A demo of Microfrontends that use routing and integrate into a base route of the Host Application.
+
+It consists of:
 
  * A [React](https://react.dev) Microfrontend that uses [react-router](https://reactrouter.com)
  * A [Vue.js](https://vuejs.org) Microfrontend that uses [vue-router](https://router.vuejs.org)
@@ -10,6 +12,7 @@ This demo consists of:
    the base route. It also configures the correct route prefix for the Microfrontends so their routes work correctly.
 
 Notes:
+
  * [Rollup](https://rollupjs.org/) is used to bundle the Microfrontend 1 and the Host Application to ES modules
  * [Vite](https://vite.dev) is used to bundle Microfrontend 2
  * There are two independent Microfrontend descriptions:

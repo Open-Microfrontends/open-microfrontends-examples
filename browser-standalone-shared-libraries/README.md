@@ -1,12 +1,16 @@
 
 # OpenMicrofrontends Example Browser Standalone Shared Libraries
 
-This demo consists of:
+A demo that shows how vendor libraries can be shared between Microfrontends using import maps.
+They use [SystemJS](https://github.com/systemjs/systemjs) modules because dynamically adding import maps for ES modules is limited at the moment.
+
+It consists of:
 
  * Two small [React](https://react.dev) Microfrontends that show a welcome message and send and receive ping messages
  * A browser-based Application Host (the Microfrontends don't require any specific server-side code)
 
 Notes:
+
  * [Webpack](https://webpack.js.org) and [Vite](https://vite.dev) are used to bundle the Microfrontends to SystemJS modules
  * The Vite-based build uses a separate config for local development based on ES modules because *vite serve* doesn't support SystemJS properly
  * Microfrontend 1 exports the render function, Microfrontend 2 adds it as a global (window) variable (because Vite expects an import via <script> tag)

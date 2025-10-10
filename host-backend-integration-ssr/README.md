@@ -1,7 +1,10 @@
 
 # OpenMicrofrontends Example Host Backend Integration SSR
 
-This demo consists of:
+This demo shows how a Microfrontend that supports Server-Side-Rendering (SSR) can be integrated into an [Express](https://expressjs.com)-based Application Host.
+It also shows how preloaded state can be provided to the frontend.
+
+It consists of:
 
  * A [Vue.js](https://vuejs.org) Microfrontend with an SSR route
  * An Express-based Application Host

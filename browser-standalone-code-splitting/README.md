@@ -1,7 +1,9 @@
 
 # OpenMicrofrontends Example Browser Standalone Code Splitting
 
-This demo consists of:
+This demo shows how code splitting has to be configured so the integration in the Host Application and browser cachingalaaaaaaaaaaa works properly. 
+
+It consists of:
 
  * A simple [Svelte](https://svelte.dev) Microfrontend that loads components with *import()* which leads to code splitting
  * A browser-based Application Host (the Microfrontend doesn't require any specific server-side code)

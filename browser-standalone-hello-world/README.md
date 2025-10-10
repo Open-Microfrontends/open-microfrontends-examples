@@ -1,7 +1,9 @@
 
 # OpenMicrofrontends Example Browser Standalone Hello World
 
-This demo consists of:
+A very simple Hello World Microfrontend.
+
+It consists of:
 
  * A pure ES Microfrontend that shows a welcome message and sends and receives ping messages
  * A browser-based Application Host (the Microfrontend doesn't require any specific server-side code)

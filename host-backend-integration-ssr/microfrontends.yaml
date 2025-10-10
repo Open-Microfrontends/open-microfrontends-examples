@@ -1,6 +1,6 @@
 openMicrofrontends: 1.0.0
 servers:
-- url: 'http://localhost:7830'
+- url: 'http://localhost:7840'
   description: Local Test Server
 securitySchemes:
   ApiKeyAuth:
@@ -8,22 +8,21 @@ securitySchemes:
     in: header
     name: X-API-KEY
 microfrontends:
-- name: OpenMicrofrontends Example API Proxy with Security
+- name: OpenMicrofrontends Example SSR
   assets:
     basePath: /public
     js:
       moduleSystem: ESM
       initial:
       - Microfrontend.js
-  rendererFunctionName: startApiProxySecurityMicrofrontend
+  rendererFunctionName: startSSRMicrofrontend
+  ssr:
+    initialHtmlPath: /ssr
   apiProxies:
     bff:
       bffPath: /api
       security:
       - ApiKeyAuth: [ ]
-    chuckNorrisJoke:
-      targets:
-      - url: https://api.chucknorris.io/jokes/random
   config:
     schema:
       type: object
@@ -35,7 +34,4 @@ microfrontends:
         - customerId
     default:
       customerId: '1000'
-  annotations:
-    MASHROOM_PROXY_ACCESS_ROLES:
-      bff:
-        - Authenticated
+
