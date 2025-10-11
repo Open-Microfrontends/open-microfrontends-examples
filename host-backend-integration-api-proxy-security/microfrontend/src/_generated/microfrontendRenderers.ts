@@ -19,7 +19,9 @@ export interface Microfrontend1Config {
 
 /* Type Parameters */
 
-type Microfrontend1Permissions = undefined;
+type Microfrontend1Permissions = {
+  readonly showJoke: boolean;
+};
 
 type Microfrontend1ApiProxyPaths = {
   readonly bff: string;

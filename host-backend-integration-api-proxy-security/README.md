@@ -2,6 +2,7 @@
 # OpenMicrofrontends Example Host Backend Integration API Proxy with Security
 
 This demo shows how a Microfrontend that requires API proxies with security can be integrated into an Application Host.
+It also shows how *frontendPermissions* can be used in the Microfrontend and how they are derived on the Application Host.
 
 It consists of:
 

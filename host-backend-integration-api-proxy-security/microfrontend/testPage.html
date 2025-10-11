@@ -10,20 +10,24 @@
                 const host = document.getElementById('root');
                 await import('/public/Microfrontend.js');
                 window.startApiProxySecurityMicrofrontend(host, {
-                        config: {
-                            customerId: '1000',
+                    config: {
+                        customerId: '1000',
+                    },
+                    apiProxyPaths: {
+                        bff: '/api',
+                        chuckNorrisJoke: 'https://api.chucknorris.io/jokes/random'
+                    },
+                    permissions: {
+                        showJoke: true,
+                    },
+                    messageBus: {
+                        subscribe: () => {},
+                        unsubscribe: () => {},
+                        publish: () => {
+                            alert('ping');
                         },
-                        apiProxyPaths: {
-                            bff: '/api',
-                        },
-                        messageBus: {
-                            subscribe: () => {},
-                            unsubscribe: () => {},
-                            publish: () => {
-                                alert('ping');
-                            },
-                        },
-                    });
+                    },
+                });
             })();
         </script>
     </body>

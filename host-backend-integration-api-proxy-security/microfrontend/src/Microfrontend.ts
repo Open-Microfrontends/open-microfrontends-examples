@@ -30,8 +30,17 @@ const customerTemplate = (customerId: string, lastName: string, firstName: strin
     `;
 }
 
+const chuckNorrisJokeTemplate = (joke: string) => {
+    return `
+        <div style="padding-top: 20px;">
+            <div style="padding-bottom: 10px">Joke of the day:</div>  
+            <div>${joke}</div>
+        </div>
+    `;
+}
+
 const renderFn: OpenMicrofrontendsExampleAPIProxyWithSecurityRenderFunction = async (host, context) => {
-    const {config, apiProxyPaths} = context;
+    const {config, apiProxyPaths, permissions} = context;
 
     const tpl = document.createElement('template');
     tpl.innerHTML = mainTemplate(config.customerId);
@@ -49,7 +58,19 @@ const renderFn: OpenMicrofrontendsExampleAPIProxyWithSecurityRenderFunction = as
         contentNode.append(customerTpl.content);
     } catch (e) {
         console.error('Loading customer failed!', e);
-        contentNode.innerHTML = '<span style="color: red">Loading failed!</span>';
+        contentNode.innerHTML = '<span style="color: red">Customer loading failed!</span>';
+    }
+
+    if (permissions.showJoke) {
+        try {
+            const response = await fetch(apiProxyPaths.chuckNorrisJoke);
+            const joke = await response.json();
+            const jokeTpl = document.createElement('template');
+            jokeTpl.innerHTML = chuckNorrisJokeTemplate(joke.value);
+            contentNode.append(jokeTpl.content);
+        } catch (e) {
+            console.error('Loading Chuck Norris joke failed!', e);
+        }
     }
 
     return {

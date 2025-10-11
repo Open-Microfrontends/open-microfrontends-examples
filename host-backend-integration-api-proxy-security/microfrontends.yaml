@@ -16,6 +16,9 @@ microfrontends:
       initial:
       - Microfrontend.js
   rendererFunctionName: startApiProxySecurityMicrofrontend
+  frontendPermissions:
+  - name: showJoke
+    description: Permission to see the random Chuck Norris joke ;-)
   apiProxies:
     bff:
       bffPath: /api
