@@ -23,5 +23,5 @@ Working examples of [OpenMicrofrontends](https://www.open-microfrontends.org) co
 | [host-backend-integration-ssr](./host-backend-integration-ssr)                               | A small [Vue.js](https://vuejs.org) Microfrontend with server-side rendering                                                         |
 
 > [!NOTE]
-> These examples are not meant to be used templates for your own Microfrontends/Integrations.
+> These examples are not meant to be templates for your own Microfrontends/Integrations.
 > The goal is to cover all typical scenarios and to use different UI frameworks and bundlers just to show that they don't really matter ;-)  
