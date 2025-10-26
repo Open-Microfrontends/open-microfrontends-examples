@@ -1,0 +1,46 @@
+{
+  "name": "@open-microfrontends/examples-host-backend-integration-ssr-microfrontend",
+  "version": "1.0.0",
+  "type": "module",
+  "private": true,
+  "engines": {
+    "node": ">=22"
+  },
+  "dependencies": {
+    "express": "^5.1.0",
+    "ejs": "^3.1.10",
+    "vue": "^3.5.22"
+  },
+  "devDependencies": {
+    "@open-microfrontends/types": "file:../../../open-microfrontends/packages/types",
+    "@open-microfrontends/open-microfrontends-generator": "file:../../../open-microfrontends-generator",
+    "cpy-cli": "^6.0.0",
+    "typescript": "^5.9.2",
+    "ts-node": "^10.9.2",
+    "vue-tsc": "^3.1.0",
+    "@types/express": "^5.0.3",
+    "webpack": "^5.101.3",
+    "webpack-cli": "^6.0.1",
+    "webpack-dev-middleware": "^7.4.5",
+    "webpack-hot-middleware": "^2.26.1",
+    "webpack-dev-server": "^5.2.2",
+    "webpack-node-externals": "^3.0.0",
+    "mini-css-extract-plugin": "^2.9.4",
+    "ts-loader": "^9.5.4",
+    "sass": "^1.93.2",
+    "sass-loader": "^16.0.5",
+    "css-loader": "^7.1.2",
+    "style-loader": "^4.0.0",
+    "vue-loader": "^17.4.2",
+    "nodemon": "^3.1.10"
+  },
+  "scripts": {
+    "generate": "omg ../microfrontends.yaml src/_generated -t renderers,renderersServerSide",
+    "type-check": "vue-tsc --noEmit",
+    "build:client": "NODE_OPTIONS='--loader ts-node/esm' webpack --config webpack.config.client.ts",
+    "build:server": "NODE_OPTIONS='--loader ts-node/esm' webpack --config webpack.config.server.ts",
+    "build": "npm run build:client && npm run build:server && cpy ../microfrontends.yaml dist --flat",
+    "start": "npm run build && node dist/server",
+    "dev": "NODE_ENV=development nodemon --watch src/server --ext ts --exec \"npm run build:server && node dist/server\""
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "name": "@open-microfrontends/examples-host-backend-integration-api-proxy-security-application-host-spring-boot",
+  "version": "1.0.0",
+  "type": "module",
+  "private": true,
+  "devDependencies": {
+    "typescript": "^5.9.3",
+    "@open-microfrontends/types": "file:../../../open-microfrontends/packages/types",
+    "@open-microfrontends/open-microfrontends-generator": "file:../../../open-microfrontends-generator"
+  },
+  "scripts": {
+    "generate:starter": "omg ../microfrontends.yaml src/main/resources/static/_generated -t starters && tsc",
+    "generate:host-integration": "omg ../microfrontends.yaml src/main/java/org/openmicrofrontends/demo/_generated -t hostBackendIntegrationsJavaServlet -a packageName=org.openmicrofrontends.demo._generated",
+    "generate": "npm run generate:starter && npm run generate:host-integration"
+  }
+}

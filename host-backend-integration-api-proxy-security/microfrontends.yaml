@@ -11,17 +11,23 @@ microfrontends:
 - name: OpenMicrofrontends Example API Proxy with Security
   assets:
     basePath: /public
+    buildManifestPath: /package.json
     js:
       moduleSystem: ESM
       initial:
       - Microfrontend.js
   rendererFunctionName: startApiProxySecurityMicrofrontend
-  frontendPermissions:
-  - name: showJoke
-    description: Permission to see the random Chuck Norris joke ;-)
+  userPermissions:
+    provided:
+      path: /permissions
+      security:
+      - ApiKeyAuth: [ ]
+    permissions:
+      - name: showJoke
+        description: Permission to see the random Chuck Norris joke ;-)
   apiProxies:
     bff:
-      bffPath: /api
+      path: /api
       security:
       - ApiKeyAuth: [ ]
     chuckNorrisJoke:

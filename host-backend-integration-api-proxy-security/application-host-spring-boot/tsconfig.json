@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "esModuleInterop": true
+  },
+  "include": [
+    "src/main/resources/static/_generated"
+  ]
+}

@@ -6,6 +6,11 @@
 
 Working examples of [OpenMicrofrontends](https://www.open-microfrontends.org) compliant Microfrontends and host integrations.
 
+## Requirements
+
+ * Node.js >= 20 
+ * Java >= 17 (only for the Java Host Integration example)
+
 ## Examples
 
 | Folder                                                                                       | Description                                                                                                                          |
@@ -16,3 +21,7 @@ Working examples of [OpenMicrofrontends](https://www.open-microfrontends.org) co
 | [browser-standalone-routing](./browser-standalone-routing)                                   | A [React](https://react.dev) Microfrontend and a [Vue.js](https://vuejs.org) Microfrontend with routes put together on a single page |
 | [host-backend-integration-api-proxy-security](./host-backend-integration-api-proxy-security) | A pure ES Microfrontend that requests an API Proxy that requires an API Key. This example includes a JS and a Java backend.          |
 | [host-backend-integration-ssr](./host-backend-integration-ssr)                               | A small [Vue.js](https://vuejs.org) Microfrontend with server-side rendering                                                         |
+
+> [!NOTE]
+> These examples are not meant to be used templates to start building your own Microfrontends.
+> The goal is to cover all typical scenarios and to use different UI frameworks and bundlers just to show that they don't matter ;-)  

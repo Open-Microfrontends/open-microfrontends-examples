@@ -1,0 +1,13 @@
+server:
+  port: 7931
+spring:
+  application:
+    name: HostIntegrationDemo
+  mvc:
+    static-path-pattern: /**
+logging:
+  level:
+    root: INFO
+    org.openmicrofrontends: DEBUG
+
+

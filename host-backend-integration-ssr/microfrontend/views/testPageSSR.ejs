@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="/public/style.css"></link>
+        <script>
+            <%-headScript%>
+        </script>
+    </head>
+    <body>
+        <h1>Microfrontend Test Page SSR</h1>
+        <div id="root"><%- ssrContent %></div>
+
+        <script>
+            (async () => {
+                const host = document.getElementById('root');
+                const mod = await import('/Microfrontend.js');
+                mod.default.startSSRMicrofrontend(host, {
+                    id: '1',
+                    config: {
+                        customerId: '<%-customerId%>',
+                    },
+                    apiProxyPaths: {
+                        bff: '/api',
+                    },
+                    messageBus: {
+                        subscribe: () => {},
+                        unsubscribe: () => {},
+                        publish: () => {
+                            alert('ping');
+                        },
+                    },
+                    serverSideRendered: true,
+                });
+            })();
+        </script>
+    </body>
+</html>

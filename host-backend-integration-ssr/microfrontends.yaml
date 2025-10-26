@@ -10,17 +10,20 @@ securitySchemes:
 microfrontends:
 - name: OpenMicrofrontends Example SSR
   assets:
-    basePath: /public
     js:
       moduleSystem: ESM
       initial:
       - Microfrontend.js
+    css:
+    - style.css
   rendererFunctionName: startSSRMicrofrontend
   ssr:
-    initialHtmlPath: /ssr
+    path: /ssr
+    security:
+    - ApiKeyAuth: [ ]
   apiProxies:
     bff:
-      bffPath: /api
+      path: /api
       security:
       - ApiKeyAuth: [ ]
   config:

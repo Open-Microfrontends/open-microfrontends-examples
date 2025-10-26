@@ -13,11 +13,7 @@ const mainTemplate = (customerId: string) => {
 
 const customerTemplate = (customerId: string, lastName: string, firstName: string) => {
     return `
-        <table>
-           <tr>
-               <th style="text-align: left; padding: 2px 5px 2px 0;">ID</th>
-               <td>${customerId}</td>
-           </tr>
+        <table>         
            <tr>
                <th style="text-align: left; padding: 2px 5px 2px 0;">Last Name</th>
                <td>${lastName}</td>

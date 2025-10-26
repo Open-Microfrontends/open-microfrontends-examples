@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <script>
+            // We need a global messageBus for inter-Microfrontend communication
+            window.globalMessageBus = {
+                listeners: [],
+                publish(topic, data) {
+                    this.listeners.filter(l => l.topic === topic).forEach(l => l.listener(data))
+                },
+                subscribe(topic, listener) {
+                    this.listeners.push({ topic, listener });
+                },
+                unsubscribe() {}
+            };
+        </script>
+        <%-microfrontendHeadHtml%>
+    </head>
+    <body>
+        <h1>Microfrontend Application Host</h1>
+        <!-- Important: There should be no whitespace between the div and pre-rendered content -->
+        <div id="root"><%-microfrontendContentHtml%></div>
+
+        <script src="public/main.js" type="module"></script>
+    </body>
+</html>

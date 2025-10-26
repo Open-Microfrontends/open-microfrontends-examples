@@ -14,6 +14,7 @@
     "@open-microfrontends/open-microfrontends-generator": "file:../../../open-microfrontends-generator",
     "typescript": "^5.9.2",
     "ts-node": "^10.9.2",
+    "tslib": "^2.8.1",
     "@types/express": "^5.0.3",
     "page.js": "^4.13.3",
     "rollup": "^4.52.3",

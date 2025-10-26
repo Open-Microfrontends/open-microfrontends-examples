@@ -22,6 +22,6 @@
     "type-check": "tsc --noEmit",
     "build": "tsc && cpy ../microfrontends.yaml dist --flat",
     "start": "npm run build && node dist/server",
-    "dev": "NODE_ENV=local nodemon --watch src --ext ts,html --exec \"npm run build && node dist/server\""
+    "dev": "NODE_ENV=development nodemon --watch src --ext ts,html --exec \"npm run build && node dist/server\""
   }
 }

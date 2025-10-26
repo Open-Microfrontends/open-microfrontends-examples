@@ -37,4 +37,4 @@ and open http://localhost:7800/testPage
     npm i
     npm start
 
-The Application Host will be available under: http://127.0.0.1:7900
+The Application Host will be available under: http://localhost:7900

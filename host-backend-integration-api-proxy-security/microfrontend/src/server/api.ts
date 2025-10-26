@@ -3,7 +3,7 @@ import {Router} from 'express';
 const api = Router();
 
 // Security middleware
-if (process.env.NODE_ENV !== 'local') {
+if (process.env.NODE_ENV !== 'development') {
     api.use((req, res, next) => {
         if (req.headers['x-api-key'] !== '123456') {
             res.sendStatus(401);

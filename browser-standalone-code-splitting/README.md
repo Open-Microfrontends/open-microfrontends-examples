@@ -37,4 +37,4 @@ For local development run
     npm i
     npm start
 
-The Application Host will be available under: http://127.0.0.1:7950
+The Application Host will be available under: http://localhost:7950
