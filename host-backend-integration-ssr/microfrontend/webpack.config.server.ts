@@ -34,12 +34,15 @@ const server: Configuration = {
                 exclude: /node_modules/,
             },
             {
-                test: /\.css$/,
+                test: /\.scss$/,
                 use: [
                     MiniCssExtractPlugin.loader,
                     {
                         loader: 'css-loader',
                     },
+                    {
+                        loader: 'sass-loader',
+                    }
                 ],
             },
         ],
@@ -50,7 +53,7 @@ const server: Configuration = {
     plugins: [
         new VueLoaderPlugin(),
         new MiniCssExtractPlugin({
-            filename: 'style.css'
+            filename: '__ingore__style.css'
         }),
     ],
     externalsPresets: {

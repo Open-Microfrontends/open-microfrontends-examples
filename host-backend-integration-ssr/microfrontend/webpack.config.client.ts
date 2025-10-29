@@ -36,12 +36,15 @@ const client: Configuration = {
                 exclude: /node_modules/,
             },
             {
-                test: /\.css$/,
+                test: /\.scss$/,
                 use: [
                     MiniCssExtractPlugin.loader,
                     {
                         loader: 'css-loader',
                     },
+                    {
+                        loader: 'sass-loader',
+                    }
                 ],
             },
         ],
@@ -56,7 +59,7 @@ const client: Configuration = {
         }),
     ],
     optimization: {
-        minimize: true,
+        minimize: false,
     }
 };
 
