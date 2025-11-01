@@ -11,8 +11,11 @@ It consists of:
 
 Notes: 
 
- * On the Application Host side the pre-rendered App content and the stylesheets are added to the HTML page via template
- * The App detects via *context.serverSideRendered* that it needs to hydrate instead of client-side render
+ * On the Application Host the pre-rendered *Microfrontend* content and a HTML head snippet 
+   (containing stylesheet links and preloaded data) are added to the HTML page via template
+ * The *Microfrontend* detects via *context.serverSideRendered* that it needs to hydrate instead of client-side render
+ * We deliberately do not use Vue's *scoped css* because the CSS selectors need to be exactly the same server-side and client-side.
+   In this case we just use a prefix (via SASS).
  * [Webpack](https://webpack.js.org) is used as a build tool for the Microfrontend (emits ES modules)
  * [Rollup](https://rollupjs.org/) is used to bundle the Host Application to ES modules
  * Microfrontend and Application Host use [EJS](https://ejs.co) templates to generate HTML pages

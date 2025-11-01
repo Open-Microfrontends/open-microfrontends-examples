@@ -2,12 +2,11 @@
 # OpenMicrofrontends Example Host Backend Integration API Proxy with Security
 
 This demo shows how a Microfrontend that requires API proxies with security can be integrated into an Application Host.
-It also demonstrates the use of *userPermissions* and how Application Hosts can use the *buildManifest*
-for proper browser cache invalidation.
+It also demonstrates the use of *userPermissions* and how Application Hosts can use the *buildManifest* for proper browser cache invalidation.
 
 It consists of:
 
- * A pure ES Microfrontend that shows customer data from an (BFF) API that needs to be accessed through a proxy because it requires security
+ * A pure ES Microfrontend that shows customer data from an (BFF) API that needs to be accessed through a proxy because it requires an API key
  * A [Express](https://expressjs.com) based Application Host
  * A [Spring Boot](https://spring.io/projects/spring-boot) based Application Host
 
@@ -17,8 +16,7 @@ Notes:
  * The API base path is /api
  * The API requires security (API Key), which is passed to every request by the Host Integration
  * The host backend integrations are also proxying the static assets, so the Microfrontend host is no longer visible to the user
- * The version in the package.json of the Microfrontend is used for cache busting of assets in the browser (?v=1.0.0) 
- * The Java backend integration is not completely type-safe, the frontend code is not checked at all (but this could be improved)
+ * The version in the *package.json* of the *Microfrontend* is used for cache busting of assets in the browser (?v=1.0.0)
  * The *OpenMicrofrontend* description is in [microfrontends.yaml](./microfrontends.yaml). 
    If you update it you have to run ```npm run generate``` in all submodules.
 

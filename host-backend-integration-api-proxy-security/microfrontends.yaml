@@ -45,6 +45,5 @@ microfrontends:
     default:
       customerId: '1000'
   annotations:
-    MASHROOM_PROXY_ACCESS_ROLES:
-      bff:
-        - Authenticated
+    MY_COCKPIT_INTEGRATION:
+      displays: CUSTOMER

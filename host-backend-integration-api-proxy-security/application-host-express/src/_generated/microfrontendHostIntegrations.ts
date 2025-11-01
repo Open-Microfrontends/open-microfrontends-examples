@@ -353,3 +353,7 @@ export const openMicrofrontendsExampleAPIProxyWithSecurityHostIntegrationMiddlew
     next();
   };
 };
+
+export const openMicrofrontendsExampleAPIProxyWithSecurityAnnotations = {
+  MY_COCKPIT_INTEGRATION: { displays: 'CUSTOMER' },
+};
