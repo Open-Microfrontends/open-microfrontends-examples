@@ -26,7 +26,7 @@ Notes:
     npm i
     npm start
 
-The Microfrontend resources will be served under <http://localhost:7850>
+The Microfrontend resources will be served under http://localhost:7850
 
 For local development run 
 
@@ -38,4 +38,4 @@ For local development run
     npm i
     npm start
 
-The Application Host will be available under: <http://localhost:7950>
+The Application Host will be available under: http://localhost:7950

@@ -34,7 +34,7 @@ If you update one of them, you have to run ```npm run generate``` in all submodu
     npm i
     npm start
 
-The Microfrontend resources will be served under <http://localhost:7810>
+The Microfrontend resources will be served under http://localhost:7810
 
 For local development, run this Microfrontend like this:
 
@@ -46,7 +46,7 @@ For local development, run this Microfrontend like this:
     npm i
     npm start
 
-The Microfrontend resources will be served under <http://localhost:7811>
+The Microfrontend resources will be served under http://localhost:7811
 
 For local development, run this Microfrontend like this:
 
@@ -58,4 +58,4 @@ For local development, run this Microfrontend like this:
     npm i
     npm start
 
-The Application Host will be available under: <http://localhost:7910>
+The Application Host will be available under: http://localhost:7910
