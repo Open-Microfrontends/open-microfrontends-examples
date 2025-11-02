@@ -1,9 +1,10 @@
-import {mount, unmount} from 'svelte';
 import {OpenMicrofrontendsExampleBrowserStandaloneCodeSplittingRenderFunction, OpenMicrofrontendsExampleBrowserStandaloneCodeSplittingRenderFunctionName} from './_generated/microfrontendRenderers';
-import Microfrontend from './Microfrontend.svelte';
 
 const renderFn: OpenMicrofrontendsExampleBrowserStandaloneCodeSplittingRenderFunction = async (host, context) => {
-    let mf = mount(Microfrontend, {
+    const {mount, unmount} = await import('svelte');
+    const Microfrontend = await import('./Microfrontend.svelte');
+
+    let mf = mount(Microfrontend.default, {
         target: host,
         props: {
             welcomeMessage: context.config.welcomeMessage,
