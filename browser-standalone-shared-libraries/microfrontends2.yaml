@@ -1,3 +1,4 @@
+$schema: 'https://open-microfrontends.org/schemas/1-0-0.json'
 openMicrofrontends: 1.0.0
 servers:
 - url: 'http://localhost:7811'

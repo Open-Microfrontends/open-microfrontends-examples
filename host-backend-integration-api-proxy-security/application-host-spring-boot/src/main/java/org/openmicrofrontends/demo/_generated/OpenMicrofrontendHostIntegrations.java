@@ -290,19 +290,24 @@ public static class OpenMicrofrontendsExampleAPIProxyWithSecurityHostIntegration
             if (buildTimestampOrVersionFromCache != null) {
                 return buildTimestampOrVersionFromCache;
             }
-            var res = fetchWithExtraHeaders("/package.json", baseSetup.getMicrofrontendBaseUrl(), Map.of());
-            var manifest = objectMapper.readValue(res, Map.class);
+            try {
+                var res = fetchWithExtraHeaders("/package.json", baseSetup.getMicrofrontendBaseUrl(), Map.of());
+                var manifest = objectMapper.readValue(res, Map.class);
 
-            String buildTimestampOrVersion = (String) manifest.get("timestamp");
-            if (buildTimestampOrVersion == null) {
-                buildTimestampOrVersion = (String) manifest.get("version");
+                String buildTimestampOrVersion = (String) manifest.get("timestamp");
+                if (buildTimestampOrVersion == null) {
+                    buildTimestampOrVersion = (String) manifest.get("version");
+                }
+                if (buildTimestampOrVersion == null) {
+                    logger.warn("[OpenMicrofrontends] No build timestamp or version found in build manifest: {}", manifest);
+                } else {
+                    baseSetup.buildTimestampOrVersionCachePut(buildTimestampOrVersion);
+                }
+                return buildTimestampOrVersion;
+            } catch (Exception e) {
+                logger.warn("[OpenMicrofrontends] Error while fetching build manifest from /package.json!", e);
             }
-            if (buildTimestampOrVersion == null) {
-                logger.warn("[OpenMicrofrontends] No build timestamp or version found in build manifest: {}", manifest);
-            } else {
-                baseSetup.buildTimestampOrVersionCachePut(buildTimestampOrVersion);
-            }
-            return buildTimestampOrVersion;
+            return null;
         
     }
 
