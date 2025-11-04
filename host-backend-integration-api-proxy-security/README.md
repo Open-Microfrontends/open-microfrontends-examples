@@ -1,14 +1,14 @@
 
 # OpenMicrofrontends Example Host Backend Integration API Proxy with Security
 
-This demo shows how a Microfrontend that requires API proxies with security can be integrated into an Application Host.
-It also demonstrates the use of *userPermissions* and how Application Hosts can use the *buildManifest* for proper browser cache invalidation.
+This demo shows how a Microfrontend that requires API proxies with security can be integrated into an Host Application.
+It also demonstrates the use of *userPermissions* and how Host Applications can use the *buildManifest* for proper browser cache invalidation.
 
 It consists of:
 
  * A pure ES Microfrontend that shows customer data from an (BFF) API that needs to be accessed through a proxy because it requires an API key
- * A [Express](https://expressjs.com) based Application Host
- * A [Spring Boot](https://spring.io/projects/spring-boot) based Application Host
+ * A [Express](https://expressjs.com) based Host Application
+ * A [Spring Boot](https://spring.io/projects/spring-boot) based Host Application
 
 Notes: 
 
@@ -38,17 +38,17 @@ and open http://localhost:7830/test
 
 Open http://localhost:7830/api/customers/1000 for an API test route.
 
-### Start the Express Application Host
+### Start the Express Host Application
 
-    cd application-host-express
+    cd host-application-express
     npm i
     npm start
 
-The Application Host will be available under: http://localhost:7930
+The Host Application will be available under: http://localhost:7930
 
-### Start the Spring Boot Application Host
+### Start the Spring Boot Host Application
 
-    cd application-host-spring-boot
+    cd host-application-spring-boot
     ./gradlew bootRun
 
-The Application Host will be available under: http://localhost:7931
+The Host Application will be available under: http://localhost:7931

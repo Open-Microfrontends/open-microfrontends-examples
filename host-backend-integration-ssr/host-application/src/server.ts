@@ -40,6 +40,6 @@ app.get('/', async (req, res) => {
 })
 
 app.listen(PORT, () => {
-    console.info(`OpenMicrofrontends SSR Example Application Host running on http://localhost:${PORT}`);
+    console.info(`OpenMicrofrontends SSR Example Host Application running on http://localhost:${PORT}`);
 });
 

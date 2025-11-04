@@ -1,5 +1,5 @@
 {
-  "name": "@open-microfrontends/examples-host-backend-integration-api-proxy-security-application-host-spring-boot",
+  "name": "@open-microfrontends/examples-host-backend-integration-api-proxy-security-host-application-spring-boot",
   "version": "1.0.0",
   "type": "module",
   "private": true,

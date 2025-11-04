@@ -30,5 +30,5 @@ app.use((req, res) => {
 });
 
 app.listen(7920, () => {
-   console.info('Application Host running on http://localhost:7920');
+   console.info('Host Application running on http://localhost:7920');
 });

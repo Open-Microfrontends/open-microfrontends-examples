@@ -6,7 +6,7 @@ A very simple Hello World Microfrontend.
 It consists of:
 
  * A pure ES Microfrontend that shows a welcome message and sends and receives ping messages
- * A browser-based Application Host (the Microfrontend doesn't require any specific server-side code)
+ * A browser-based Host Application (the Microfrontend doesn't require any specific server-side code)
 
 Notes:
 
@@ -31,10 +31,10 @@ For local development run
 
 and open http://localhost:7800/testPage
 
-### Start the Application Host
+### Start the Host Application
 
-    cd application-host
+    cd host-application
     npm i
     npm start
 
-The Application Host will be available under: http://localhost:7900
+The Host Application will be available under: http://localhost:7900

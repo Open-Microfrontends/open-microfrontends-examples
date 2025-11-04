@@ -14,5 +14,5 @@ app.use(openMicrofrontendsExampleAPIProxyWithSecurityHostIntegrationMiddleware(
 ));
 
 app.listen(PORT, () => {
-   console.info(`Application Host running on http://localhost:${PORT}`);
+   console.info(`Host Application running on http://localhost:${PORT}`);
 });

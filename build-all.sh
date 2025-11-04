@@ -1,24 +1,24 @@
 #!/usr/bin/env bash
 
 NPM_PACKAGES=(
-  "browser-standalone-code-splitting/application-host"
+  "browser-standalone-code-splitting/host-application"
   "browser-standalone-code-splitting/microfrontend"
-  "browser-standalone-hello-world/application-host"
+  "browser-standalone-hello-world/host-application"
   "browser-standalone-hello-world/microfrontend"
-  "browser-standalone-routing/application-host"
+  "browser-standalone-routing/host-application"
   "browser-standalone-routing/microfrontend1"
   "browser-standalone-routing/microfrontend2"
-  "browser-standalone-shared-libraries/application-host"
+  "browser-standalone-shared-libraries/host-application"
   "browser-standalone-shared-libraries/microfrontend1"
   "browser-standalone-shared-libraries/microfrontend2"
   "host-backend-integration-api-proxy-security/microfrontend"
-  "host-backend-integration-api-proxy-security/application-host-express"
+  "host-backend-integration-api-proxy-security/host-application-express"
   "host-backend-integration-ssr/microfrontend"
-  "host-backend-integration-ssr/application-host"
+  "host-backend-integration-ssr/host-application"
 )
 
 JAVA_PACKAGES=(
-  "host-backend-integration-api-proxy-security/application-host-spring-boot"
+  "host-backend-integration-api-proxy-security/host-application-spring-boot"
 )
 
 CWD="$(dirname "$0")"

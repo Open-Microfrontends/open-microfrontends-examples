@@ -13,7 +13,7 @@ Shared libraries in this example:
 It consists of:
 
  * Two small [React](https://react.dev) Microfrontends that show a welcome message and send and receive ping messages
- * A browser-based Application Host (the Microfrontends don't require any specific server-side code)
+ * A browser-based Host Application (the Microfrontends don't require any specific server-side code)
 
 Notes:
 
@@ -52,10 +52,10 @@ For local development, run this Microfrontend like this:
 
     npm run dev
 
-### Start the Application Host
+### Start the Host Application
 
-    cd application-host
+    cd host-application
     npm i
     npm start
 
-The Application Host will be available under: http://localhost:7910
+The Host Application will be available under: http://localhost:7910

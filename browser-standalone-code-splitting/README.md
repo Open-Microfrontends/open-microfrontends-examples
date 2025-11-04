@@ -6,7 +6,7 @@ This demo shows how code splitting has to be configured so the integration in th
 It consists of:
 
  * A simple [Svelte](https://svelte.dev) Microfrontend that loads components with *import()* which leads to code splitting
- * A browser-based Application Host (the Microfrontend doesn't require any specific server-side code)
+ * A browser-based Host Application (the Microfrontend doesn't require any specific server-side code)
 
 Notes:
 
@@ -34,10 +34,10 @@ For local development run
 
     npm run dev
 
-### Start the Application Host
+### Start the Host Application
 
-    cd application-host
+    cd host-application
     npm i
     npm start
 
-The Application Host will be available under: http://localhost:7950
+The Host Application will be available under: http://localhost:7950

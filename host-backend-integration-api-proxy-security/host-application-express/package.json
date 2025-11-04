@@ -1,5 +1,5 @@
 {
-  "name": "@open-microfrontends/examples-host-backend-integration-ssr-application-host",
+  "name": "@open-microfrontends/examples-host-backend-integration-api-proxy-security-host-application-express",
   "version": "1.0.0",
   "type": "module",
   "private": true,
@@ -8,7 +8,6 @@
   },
   "dependencies": {
     "express": "^5.1.0",
-    "ejs": "^3.1.10",
     "http-proxy-3": "^1.22.0"
   },
   "devDependencies": {
@@ -17,6 +16,7 @@
     "typescript": "^5.9.2",
     "tslib": "^2.8.1",
     "@types/express": "^5.0.3",
+    "cpy-cli": "^6.0.0",
     "rollup": "^4.52.3",
     "@rollup/plugin-node-resolve": "^16.0.1",
     "@rollup/plugin-commonjs": "^28.0.6",
@@ -26,7 +26,7 @@
   "scripts": {
     "generate": "omg ../microfrontends.yaml src/_generated -t starters,hostBackendIntegrationsNodeJs",
     "type-check": "tsc --noEmit",
-    "build": "rollup --config rollup.config.ts --configPlugin typescript",
+    "build": "rollup --config rollup.config.ts --configPlugin typescript && cpy src/index.html dist --flat",
     "start": "npm run build && node dist/server"
   }
 }

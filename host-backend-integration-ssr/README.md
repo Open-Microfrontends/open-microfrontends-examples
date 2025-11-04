@@ -1,24 +1,24 @@
 
 # OpenMicrofrontends Example Host Backend Integration SSR
 
-This demo shows how a Microfrontend that supports Server-Side-Rendering (SSR) can be integrated into an [Express](https://expressjs.com)-based Application Host.
+This demo shows how a Microfrontend that supports Server-Side-Rendering (SSR) can be integrated into an [Express](https://expressjs.com)-based Host Application.
 It also shows how a preloaded state can be provided to the frontend.
 
 It consists of:
 
  * A [Vue.js](https://vuejs.org) Microfrontend with an SSR route
- * An Express-based Application Host
+ * An Express-based Host Application
 
 Notes: 
 
- * On the Application Host the pre-rendered *Microfrontend* content and a HTML head snippet 
+ * On the Host Application the pre-rendered *Microfrontend* content and a HTML head snippet 
    (containing stylesheet links and preloaded data) are added to the HTML page via template
  * The *Microfrontend* detects via *context.serverSideRendered* that it needs to hydrate instead of client-side render
  * We deliberately do not use Vue's *scoped css* because the CSS selectors need to be exactly the same server-side and client-side.
    In this case we just use a prefix (via SASS).
  * [Webpack](https://webpack.js.org) is used as a build tool for the Microfrontend (emits ES modules)
  * [Rollup](https://rollupjs.org/) is used to bundle the Host Application to ES modules
- * Microfrontend and Application Host use [EJS](https://ejs.co) templates to generate HTML pages
+ * Microfrontend and Host Application use [EJS](https://ejs.co) templates to generate HTML pages
  * The spec file is [microfrontends.yaml](./microfrontends.yaml).
    If you update it you have to run ```npm run generate``` in all submodules.
 
@@ -51,10 +51,10 @@ To check the SSR result, call POST http://localhost:7840/ssr with the following 
 }
 ```
 
-### Start the Application Host
+### Start the Host Application
 
-    cd application-host
+    cd host-application
     npm i
     npm start
 
-The Application Host will be available under: http://localhost:7940
+The Host Application will be available under: http://localhost:7940

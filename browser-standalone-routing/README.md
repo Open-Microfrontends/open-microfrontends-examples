@@ -7,7 +7,7 @@ It consists of:
 
  * A [React](https://react.dev) Microfrontend that uses [react-router](https://reactrouter.com)
  * A [Vue.js](https://vuejs.org) Microfrontend that uses [vue-router](https://router.vuejs.org)
- * A simple [Express](https://expressjs.com) Application Host without any backend logic 
+ * A simple [Express](https://expressjs.com) Host Application without any backend logic 
    that uses [page.js](https://github.com/visionmedia/page.js) to load one of the Microfrontends based on 
    the base route. It also configures the correct route prefix for the Microfrontends so their routes work correctly.
 
@@ -47,10 +47,10 @@ For local development, run this Microfrontend like this:
 
     npm run dev
 
-### Start the Application Host
+### Start the Host Application
 
-    cd application-host
+    cd host-application
     npm i
     npm start
 
-The Application Host will be available under: http://localhost:7920
+The Host Application will be available under: http://localhost:7920

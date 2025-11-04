@@ -1,5 +1,5 @@
 {
-  "name": "@open-microfrontends/examples-browser-standalone-hello-world-application-host",
+  "name": "@open-microfrontends/examples-browser-standalone-hello-world-host-application",
   "version": "1.0.0",
   "type": "module",
   "private": true,
