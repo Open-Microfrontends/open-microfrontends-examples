@@ -23,3 +23,5 @@ microfrontends:
       additionalProperties: false
     default:
       routePrefix: ''
+  annotations:
+    MANIPULATES_LOCATION: true

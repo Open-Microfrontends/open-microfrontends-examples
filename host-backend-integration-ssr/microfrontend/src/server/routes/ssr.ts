@@ -11,9 +11,8 @@ export default async (req: Request, res: Response) => {
     }
 
     try {
-        const html = await renderMicrofrontend(req.body);
-        res.setHeader('Content-Type', 'application/json');
-        res.send(html);
+        const response = await renderMicrofrontend(req.body);
+        res.json(response);
     } catch (e: any) {
         console.error('Server-side rendering failed!', e),
         res.sendStatus(500);

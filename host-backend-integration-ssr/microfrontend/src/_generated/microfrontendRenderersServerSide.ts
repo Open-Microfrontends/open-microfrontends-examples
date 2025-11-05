@@ -3,7 +3,7 @@
  * DO NOT MODIFY!
  */
 
-import type { OpenMicrofrontendsServerSideRendererFunction } from '@open-microfrontends/types/OpenMicrofrontendsServerSideRendererFunction';
+import type { OpenMicrofrontendsServerSideRenderer } from '@open-microfrontends/types/OpenMicrofrontendsServerSideRenderer';
 
 /* TypeScript type from Schemas */
 
@@ -21,13 +21,13 @@ export interface Microfrontend1Config {
 
 type Microfrontend1Permissions = undefined;
 
-/* Render Function */
+/* Renderer */
 
-export type OpenMicrofrontendsExampleSSRServerSideRenderFunction = OpenMicrofrontendsServerSideRendererFunction<
+export type OpenMicrofrontendsExampleSSRServerSideRenderer = OpenMicrofrontendsServerSideRenderer<
   Microfrontend1Config,
   Microfrontend1Permissions
 >;
 
 /* Path constants */
 
-export const OpenMicrofrontendsExampleSSRServerSideRenderPath = '/ssr';
+export const OpenMicrofrontendsExampleSSRServerSideRendererPath = '/ssr';

@@ -1,6 +1,6 @@
-import {OpenMicrofrontendsExampleBrowserStandaloneCodeSplittingRenderFunction, OpenMicrofrontendsExampleBrowserStandaloneCodeSplittingRenderFunctionName} from './_generated/microfrontendRenderers';
+import {OpenMicrofrontendsExampleBrowserStandaloneCodeSplittingRenderer, OpenMicrofrontendsExampleBrowserStandaloneCodeSplittingRendererFunctionName} from './_generated/microfrontendRenderers';
 
-const renderFn: OpenMicrofrontendsExampleBrowserStandaloneCodeSplittingRenderFunction = async (host, context) => {
+const renderer: OpenMicrofrontendsExampleBrowserStandaloneCodeSplittingRenderer = async (host, context) => {
     const {mount, unmount} = await import('svelte');
     const Microfrontend = await import('./Microfrontend.svelte');
 
@@ -17,4 +17,4 @@ const renderFn: OpenMicrofrontendsExampleBrowserStandaloneCodeSplittingRenderFun
     }
 }
 
-(window as any)[OpenMicrofrontendsExampleBrowserStandaloneCodeSplittingRenderFunctionName] = renderFn;
+(window as any)[OpenMicrofrontendsExampleBrowserStandaloneCodeSplittingRendererFunctionName] = renderer;

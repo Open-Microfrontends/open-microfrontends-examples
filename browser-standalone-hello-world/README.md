@@ -11,7 +11,7 @@ It consists of:
 Notes:
 
   * TypeScript is used for transpiling to ES modules, no bundlers are involved
-  * The Microfrontend exports the render function (so it is not globally available)
+  * The Microfrontend exports the Renderer function (so it is not globally available)
   * The *OpenMicrofrontend* description is in [microfrontends.yaml](./microfrontends.yaml). 
     If you update it you have to run ```npm run generate``` in all submodules.
 

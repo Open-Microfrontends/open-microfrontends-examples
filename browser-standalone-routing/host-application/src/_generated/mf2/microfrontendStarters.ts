@@ -3,7 +3,7 @@
  * DO NOT MODIFY!
  */
 
-import type { OpenMicrofrontendsClientContext } from '@open-microfrontends/types/OpenMicrofrontendsRendererFunction';
+import type { OpenMicrofrontendsClientContext } from '@open-microfrontends/types/OpenMicrofrontendsRenderer';
 
 /* TypeScript type from Schemas */
 
@@ -51,7 +51,7 @@ const defaultConfig = {
   routePrefix: '',
 };
 
-/* Render function type with aligned config and message bus */
+/* Renderer context type with aligned config and message bus */
 
 type Microfrontend1ClientContext = Omit<
   OpenMicrofrontendsClientContext<
@@ -103,7 +103,7 @@ export async function startOpenMicrofrontendsExampleBrowserStandaloneRouting2(
     (window as any)['startBrowserStandaloneRoutingMicrofrontend2'];
   if (!renderFunction) {
     throw new Error(
-      '[OpenMicrofrontends] Render function of Microfrontend "OpenMicrofrontends Example Browser Standalone Routing 2" not found!'
+      '[OpenMicrofrontends] Renderer of Microfrontend "OpenMicrofrontends Example Browser Standalone Routing 2" not found!'
     );
   }
 

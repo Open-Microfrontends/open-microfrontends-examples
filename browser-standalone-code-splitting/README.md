@@ -16,7 +16,7 @@ Notes:
     Check out the [implementation hints](https://www.open-microfrontends.org/implementation-hints/microfrontends) here for more details.
   * It is **very import** to set a relative base path for assets (e.g., in *Vite* this is done by setting ```base: ''```)
   * It is also important that all chunks except the entries have the hash in their name for cache busting
-  * Due to the fact that Vite expects a script tag and does not allow dynamic imports, the render function is attached to `window`.
+  * Due to the fact that Vite expects a script tag and does not allow dynamic imports, the Renderer function is attached to `window`.
   * The *OpenMicrofrontend* description is in [microfrontends.yaml](./microfrontends.yaml). 
     If you update it you have to run ```npm run generate``` in all submodules.
 

@@ -5,7 +5,7 @@
 
 import { createProxyServer } from 'http-proxy-3';
 import type { ServerResponse, IncomingMessage } from 'node:http';
-import type { OpenMicrofrontendsClientContext } from '@open-microfrontends/types/OpenMicrofrontendsRendererFunction';
+import type { OpenMicrofrontendsClientContext } from '@open-microfrontends/types/OpenMicrofrontendsRenderer';
 
 interface Logger {
   debug(msg: string, ...args: any[]): void;
@@ -254,7 +254,7 @@ export const openMicrofrontendsExampleAPIProxyWithSecurityHostIntegrationMiddlew
   });
 
   return async (req: IncomingMessage, res: ServerResponse, next: (err?: any) => void) => {
-    // Required by the SSR render function
+    // Required by the SSR Renderer
     (req as any)['__om_base_setup_OpenMicrofrontendsExampleAPIProxyWithSecurity__'] = baseSetup;
 
     let url = req.url;

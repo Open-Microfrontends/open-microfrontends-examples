@@ -1,9 +1,9 @@
 import {createApp, createSSRApp} from 'vue';
 import state from './state';
 import Microfrontend from './Microfrontend.vue';
-import {OpenMicrofrontendsExampleSSRRenderFunction, OpenMicrofrontendsExampleSSRRenderFunctionName} from './_generated/microfrontendRenderers';
+import {OpenMicrofrontendsExampleSSRRenderer, OpenMicrofrontendsExampleSSRRendererFunctionName} from './_generated/microfrontendRenderers';
 
-const renderFn: OpenMicrofrontendsExampleSSRRenderFunction = async (host, context) => {
+const renderer: OpenMicrofrontendsExampleSSRRenderer = async (host, context) => {
     const {id, config, apiProxyPaths, serverSideRendered} = context;
 
     let microfrontend;
@@ -36,5 +36,5 @@ const renderFn: OpenMicrofrontendsExampleSSRRenderFunction = async (host, contex
 }
 
 export default {
-    [OpenMicrofrontendsExampleSSRRenderFunctionName]: renderFn,
+    [OpenMicrofrontendsExampleSSRRendererFunctionName]: renderer,
 };

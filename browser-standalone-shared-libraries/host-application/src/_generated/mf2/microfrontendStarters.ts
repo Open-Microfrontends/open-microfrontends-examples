@@ -3,7 +3,7 @@
  * DO NOT MODIFY!
  */
 
-import type { OpenMicrofrontendsClientContext } from '@open-microfrontends/types/OpenMicrofrontendsRendererFunction';
+import type { OpenMicrofrontendsClientContext } from '@open-microfrontends/types/OpenMicrofrontendsRenderer';
 
 /* TypeScript type from Schemas */
 
@@ -92,7 +92,7 @@ const defaultConfig = {
   welcomeMessage: 'Hello World!',
 };
 
-/* Render function type with aligned config and message bus */
+/* Renderer context type with aligned config and message bus */
 
 type Microfrontend1ClientContext = Omit<
   OpenMicrofrontendsClientContext<
@@ -166,7 +166,7 @@ export async function startOpenMicrofrontendsExampleBrowserStandaloneSharedLibra
     (window as any)['startBrowserStandaloneSharedLibrariesMicrofrontend2'];
   if (!renderFunction) {
     throw new Error(
-      '[OpenMicrofrontends] Render function of Microfrontend "OpenMicrofrontends Example Browser Standalone Shared Libraries 2" not found!'
+      '[OpenMicrofrontends] Renderer of Microfrontend "OpenMicrofrontends Example Browser Standalone Shared Libraries 2" not found!'
     );
   }
 

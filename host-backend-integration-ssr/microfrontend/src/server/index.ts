@@ -2,7 +2,7 @@ import {resolve} from 'path';
 import express from 'express';
 import api from './routes/api';
 import ssr from './routes/ssr';
-import {OpenMicrofrontendsExampleSSRServerSideRenderPath} from '../_generated/microfrontendRenderersServerSide';
+import {OpenMicrofrontendsExampleSSRServerSideRendererPath} from '../_generated/microfrontendRenderersServerSide';
 import {OpenMicrofrontendsExampleSSRAssetsBasePath} from '../_generated/microfrontendRenderers';
 
 // Unfortunately, we cannot use import.meta.dirname with Webpack
@@ -26,7 +26,7 @@ if (process.env.NODE_ENV === 'development') {
 app.use('/api', api);
 
 // SSR routes
-app.post(OpenMicrofrontendsExampleSSRServerSideRenderPath, ssr);
+app.post(OpenMicrofrontendsExampleSSRServerSideRendererPath, ssr);
 
 // Assets
 app.use(OpenMicrofrontendsExampleSSRAssetsBasePath, express.static(resolve(serverDir, 'public')));

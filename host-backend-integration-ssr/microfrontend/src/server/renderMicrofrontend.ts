@@ -1,10 +1,10 @@
 import { createSSRApp } from 'vue';
 import { renderToString } from 'vue/server-renderer';
 import state from '../state';
-import type {OpenMicrofrontendsExampleSSRServerSideRenderFunction} from "../_generated/microfrontendRenderersServerSide";
+import type {OpenMicrofrontendsExampleSSRServerSideRenderer} from "../_generated/microfrontendRenderersServerSide";
 import Microfrontend from "../Microfrontend.vue";
 
-const render: OpenMicrofrontendsExampleSSRServerSideRenderFunction = async (requestBody) => {
+const renderer: OpenMicrofrontendsExampleSSRServerSideRenderer = async (requestBody) => {
     const { id, config } = requestBody;
 
     const microfrontend = createSSRApp(Microfrontend, {
@@ -20,4 +20,4 @@ const render: OpenMicrofrontendsExampleSSRServerSideRenderFunction = async (requ
     };
 };
 
-export default render;
+export default renderer;

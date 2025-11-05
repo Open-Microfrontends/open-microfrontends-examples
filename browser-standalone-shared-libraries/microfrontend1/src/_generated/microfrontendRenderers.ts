@@ -3,7 +3,7 @@
  * DO NOT MODIFY!
  */
 
-import type { OpenMicrofrontendsRendererFunction } from '@open-microfrontends/types/OpenMicrofrontendsRendererFunction';
+import type { OpenMicrofrontendsRenderer } from '@open-microfrontends/types/OpenMicrofrontendsRenderer';
 
 /* TypeScript type from Schemas */
 
@@ -32,18 +32,17 @@ type Microfrontend1MessagesSubscribe = {
   ping: Microfrontend1TopicPing;
 };
 
-/* Render Function */
+/* Renderer */
 
-export type OpenMicrofrontendsExampleBrowserStandaloneSharedLibraries1RenderFunction =
-  OpenMicrofrontendsRendererFunction<
-    Microfrontend1Config,
-    Microfrontend1Permissions,
-    Microfrontend1ApiProxyPaths,
-    Microfrontend1MessagesPublish,
-    Microfrontend1MessagesSubscribe
-  >;
+export type OpenMicrofrontendsExampleBrowserStandaloneSharedLibraries1Renderer = OpenMicrofrontendsRenderer<
+  Microfrontend1Config,
+  Microfrontend1Permissions,
+  Microfrontend1ApiProxyPaths,
+  Microfrontend1MessagesPublish,
+  Microfrontend1MessagesSubscribe
+>;
 
-export const OpenMicrofrontendsExampleBrowserStandaloneSharedLibraries1RenderFunctionName =
+export const OpenMicrofrontendsExampleBrowserStandaloneSharedLibraries1RendererFunctionName =
   'startBrowserStandaloneSharedLibrariesMicrofrontend1';
 
 /* Path constants */

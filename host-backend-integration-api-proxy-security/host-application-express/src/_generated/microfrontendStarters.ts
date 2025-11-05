@@ -3,7 +3,7 @@
  * DO NOT MODIFY!
  */
 
-import type { OpenMicrofrontendsClientContext } from '@open-microfrontends/types/OpenMicrofrontendsRendererFunction';
+import type { OpenMicrofrontendsClientContext } from '@open-microfrontends/types/OpenMicrofrontendsRenderer';
 
 /* TypeScript type from Schemas */
 
@@ -69,7 +69,7 @@ const defaultConfig = {
   customerId: '1000',
 };
 
-/* Render function type with aligned config and message bus */
+/* Renderer context type with aligned config and message bus */
 
 type Microfrontend1ClientContext = Omit<
   OpenMicrofrontendsClientContext<
@@ -147,7 +147,7 @@ export async function startOpenMicrofrontendsExampleAPIProxyWithSecurity(
     (window as any)['startApiProxySecurityMicrofrontend'];
   if (!renderFunction) {
     throw new Error(
-      '[OpenMicrofrontends] Render function of Microfrontend "OpenMicrofrontends Example API Proxy with Security" not found!'
+      '[OpenMicrofrontends] Renderer of Microfrontend "OpenMicrofrontends Example API Proxy with Security" not found!'
     );
   }
 

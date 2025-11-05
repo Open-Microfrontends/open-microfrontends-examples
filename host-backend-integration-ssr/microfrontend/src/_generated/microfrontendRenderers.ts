@@ -3,7 +3,7 @@
  * DO NOT MODIFY!
  */
 
-import type { OpenMicrofrontendsRendererFunction } from '@open-microfrontends/types/OpenMicrofrontendsRendererFunction';
+import type { OpenMicrofrontendsRenderer } from '@open-microfrontends/types/OpenMicrofrontendsRenderer';
 
 /* TypeScript type from Schemas */
 
@@ -28,9 +28,9 @@ type Microfrontend1ApiProxyPaths = {
 type Microfrontend1MessagesPublish = undefined;
 type Microfrontend1MessagesSubscribe = undefined;
 
-/* Render Function */
+/* Renderer */
 
-export type OpenMicrofrontendsExampleSSRRenderFunction = OpenMicrofrontendsRendererFunction<
+export type OpenMicrofrontendsExampleSSRRenderer = OpenMicrofrontendsRenderer<
   Microfrontend1Config,
   Microfrontend1Permissions,
   Microfrontend1ApiProxyPaths,
@@ -38,7 +38,7 @@ export type OpenMicrofrontendsExampleSSRRenderFunction = OpenMicrofrontendsRende
   Microfrontend1MessagesSubscribe
 >;
 
-export const OpenMicrofrontendsExampleSSRRenderFunctionName = 'startSSRMicrofrontend';
+export const OpenMicrofrontendsExampleSSRRendererFunctionName = 'startSSRMicrofrontend';
 
 /* Path constants */
 

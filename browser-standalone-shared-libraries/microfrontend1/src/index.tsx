@@ -1,9 +1,9 @@
 import React from 'react';
 import {createRoot} from 'react-dom/client';
 import {Microfrontend1} from "./Microfrontend1";
-import {OpenMicrofrontendsExampleBrowserStandaloneSharedLibraries1RenderFunction, OpenMicrofrontendsExampleBrowserStandaloneSharedLibraries1RenderFunctionName} from './_generated/microfrontendRenderers';
+import {OpenMicrofrontendsExampleBrowserStandaloneSharedLibraries1Renderer, OpenMicrofrontendsExampleBrowserStandaloneSharedLibraries1RendererFunctionName} from './_generated/microfrontendRenderers';
 
-const renderFn: OpenMicrofrontendsExampleBrowserStandaloneSharedLibraries1RenderFunction = async (host, context) => {
+const renderer: OpenMicrofrontendsExampleBrowserStandaloneSharedLibraries1Renderer = async (host, context) => {
     const {config, messageBus} = context;
 
     const root = createRoot(host);
@@ -22,5 +22,5 @@ const renderFn: OpenMicrofrontendsExampleBrowserStandaloneSharedLibraries1Render
 }
 
 export default {
-    [OpenMicrofrontendsExampleBrowserStandaloneSharedLibraries1RenderFunctionName]: renderFn,
+    [OpenMicrofrontendsExampleBrowserStandaloneSharedLibraries1RendererFunctionName]: renderer,
 };

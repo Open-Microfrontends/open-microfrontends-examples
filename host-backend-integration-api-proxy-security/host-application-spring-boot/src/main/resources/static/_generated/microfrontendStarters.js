@@ -76,7 +76,7 @@ export async function startOpenMicrofrontendsExampleAPIProxyWithSecurity(hostEle
         exportedModules.find((m) => 'default' in m && 'startApiProxySecurityMicrofrontend' in m.default)?.default?.['startApiProxySecurityMicrofrontend'] ||
         window['startApiProxySecurityMicrofrontend'];
     if (!renderFunction) {
-        throw new Error('[OpenMicrofrontends] Render function of Microfrontend "OpenMicrofrontends Example API Proxy with Security" not found!');
+        throw new Error('[OpenMicrofrontends] Renderer of Microfrontend "OpenMicrofrontends Example API Proxy with Security" not found!');
     }
     const apiProxyPaths = {};
     apiProxyPaths['bff'] = `${proxiesPath}/bff`;

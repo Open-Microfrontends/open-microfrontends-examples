@@ -19,7 +19,7 @@ Notes:
 
  * [Webpack](https://webpack.js.org) and [Vite](https://vite.dev) are used to bundle the Microfrontends to SystemJS modules
  * The Vite-based build uses a separate config for local development based on ES modules because *vite serve* doesn't support SystemJS properly
- * Microfrontend 1 exports the render function, Microfrontend 2 attaches it to `window` (because Vite expects an import via <script> tag)
+ * Microfrontend 1 exports the Renderer function, Microfrontend 2 attaches it to `window` (because Vite expects an import via <script> tag)
  * There are two independent Microfrontend descriptions:
    *  [microfrontends1.yaml](./microfrontends1.yaml)
    *  [microfrontends2.yaml](./microfrontends2.yaml)

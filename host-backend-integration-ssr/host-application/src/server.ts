@@ -1,6 +1,6 @@
 import {resolve} from 'path';
 import express from 'express';
-import {openMicrofrontendsExampleSSRHostIntegrationMiddleware, openMicrofrontendsExampleSSRServerSideRender} from './_generated/microfrontendHostIntegrations';
+import {openMicrofrontendsExampleSSRHostIntegrationMiddleware, openMicrofrontendsExampleSSRServerSideRenderer} from './_generated/microfrontendHostIntegrations';
 import OpenMicrofrontendsExampleSSRSetup from './OpenMicrofrontendsExampleSSRSetup';
 import {microfrontend1} from './microfrontends';
 
@@ -24,7 +24,7 @@ app.get('/', async (req, res) => {
     let microfrontendContentHtml = '';
     let microfrontendHeadHtml = '';
     try {
-        const result = await openMicrofrontendsExampleSSRServerSideRender(req, {
+        const result = await openMicrofrontendsExampleSSRServerSideRenderer(req, {
             ...microfrontend1,
         });
         // console.debug('SSR result', result);

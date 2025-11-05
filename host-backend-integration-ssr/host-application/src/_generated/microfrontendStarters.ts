@@ -3,7 +3,7 @@
  * DO NOT MODIFY!
  */
 
-import type { OpenMicrofrontendsClientContext } from '@open-microfrontends/types/OpenMicrofrontendsRendererFunction';
+import type { OpenMicrofrontendsClientContext } from '@open-microfrontends/types/OpenMicrofrontendsRenderer';
 
 /* TypeScript type from Schemas */
 
@@ -69,7 +69,7 @@ const defaultConfig = {
   customerId: '1000',
 };
 
-/* Render function type with aligned config and message bus */
+/* Renderer context type with aligned config and message bus */
 
 type Microfrontend1ClientContext = Omit<
   OpenMicrofrontendsClientContext<
@@ -151,9 +151,7 @@ export async function startOpenMicrofrontendsExampleSSR(
     ] ||
     (window as any)['startSSRMicrofrontend'];
   if (!renderFunction) {
-    throw new Error(
-      '[OpenMicrofrontends] Render function of Microfrontend "OpenMicrofrontends Example SSR" not found!'
-    );
+    throw new Error('[OpenMicrofrontends] Renderer of Microfrontend "OpenMicrofrontends Example SSR" not found!');
   }
 
   const apiProxyPaths = {};

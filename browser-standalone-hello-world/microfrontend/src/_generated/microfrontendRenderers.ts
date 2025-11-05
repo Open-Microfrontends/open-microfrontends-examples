@@ -3,7 +3,7 @@
  * DO NOT MODIFY!
  */
 
-import type { OpenMicrofrontendsRendererFunction } from '@open-microfrontends/types/OpenMicrofrontendsRendererFunction';
+import type { OpenMicrofrontendsRenderer } from '@open-microfrontends/types/OpenMicrofrontendsRenderer';
 
 /* TypeScript type from Schemas */
 
@@ -32,9 +32,9 @@ type Microfrontend1MessagesSubscribe = {
   ping: Microfrontend1TopicPing;
 };
 
-/* Render Function */
+/* Renderer */
 
-export type OpenMicrofrontendsExampleBrowserStandaloneHelloWorldRenderFunction = OpenMicrofrontendsRendererFunction<
+export type OpenMicrofrontendsExampleBrowserStandaloneHelloWorldRenderer = OpenMicrofrontendsRenderer<
   Microfrontend1Config,
   Microfrontend1Permissions,
   Microfrontend1ApiProxyPaths,
@@ -42,7 +42,7 @@ export type OpenMicrofrontendsExampleBrowserStandaloneHelloWorldRenderFunction =
   Microfrontend1MessagesSubscribe
 >;
 
-export const OpenMicrofrontendsExampleBrowserStandaloneHelloWorldRenderFunctionName =
+export const OpenMicrofrontendsExampleBrowserStandaloneHelloWorldRendererFunctionName =
   'startBrowserStandaloneHelloWorldMicrofrontend';
 
 /* Path constants */

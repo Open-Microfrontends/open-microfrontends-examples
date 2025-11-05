@@ -1,4 +1,4 @@
-import {OpenMicrofrontendsExampleAPIProxyWithSecurityRenderFunction, OpenMicrofrontendsExampleAPIProxyWithSecurityRenderFunctionName} from './_generated/microfrontendRenderers.js';
+import {OpenMicrofrontendsExampleAPIProxyWithSecurityRenderer, OpenMicrofrontendsExampleAPIProxyWithSecurityRendererFunctionName} from './_generated/microfrontendRenderers.js';
 
 const mainTemplate = (customerId: string) => {
     return `
@@ -35,7 +35,7 @@ const chuckNorrisJokeTemplate = (joke: string) => {
     `;
 }
 
-const renderFn: OpenMicrofrontendsExampleAPIProxyWithSecurityRenderFunction = async (host, context) => {
+const renderer: OpenMicrofrontendsExampleAPIProxyWithSecurityRenderer = async (host, context) => {
     const {config, apiProxyPaths, permissions} = context;
 
     const tpl = document.createElement('template');
@@ -76,4 +76,4 @@ const renderFn: OpenMicrofrontendsExampleAPIProxyWithSecurityRenderFunction = as
     }
 };
 
-window[OpenMicrofrontendsExampleAPIProxyWithSecurityRenderFunctionName] = renderFn;
+window[OpenMicrofrontendsExampleAPIProxyWithSecurityRendererFunctionName] = renderer;

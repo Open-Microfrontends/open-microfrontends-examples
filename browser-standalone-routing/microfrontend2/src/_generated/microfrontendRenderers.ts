@@ -3,7 +3,7 @@
  * DO NOT MODIFY!
  */
 
-import type { OpenMicrofrontendsRendererFunction } from '@open-microfrontends/types/OpenMicrofrontendsRendererFunction';
+import type { OpenMicrofrontendsRenderer } from '@open-microfrontends/types/OpenMicrofrontendsRenderer';
 
 /* TypeScript type from Schemas */
 
@@ -22,9 +22,9 @@ type Microfrontend1ApiProxyPaths = undefined;
 type Microfrontend1MessagesPublish = undefined;
 type Microfrontend1MessagesSubscribe = undefined;
 
-/* Render Function */
+/* Renderer */
 
-export type OpenMicrofrontendsExampleBrowserStandaloneRouting2RenderFunction = OpenMicrofrontendsRendererFunction<
+export type OpenMicrofrontendsExampleBrowserStandaloneRouting2Renderer = OpenMicrofrontendsRenderer<
   Microfrontend1Config,
   Microfrontend1Permissions,
   Microfrontend1ApiProxyPaths,
@@ -32,7 +32,7 @@ export type OpenMicrofrontendsExampleBrowserStandaloneRouting2RenderFunction = O
   Microfrontend1MessagesSubscribe
 >;
 
-export const OpenMicrofrontendsExampleBrowserStandaloneRouting2RenderFunctionName =
+export const OpenMicrofrontendsExampleBrowserStandaloneRouting2RendererFunctionName =
   'startBrowserStandaloneRoutingMicrofrontend2';
 
 /* Path constants */

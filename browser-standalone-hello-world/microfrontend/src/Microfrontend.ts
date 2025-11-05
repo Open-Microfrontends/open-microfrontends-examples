@@ -1,4 +1,4 @@
-import {OpenMicrofrontendsExampleBrowserStandaloneHelloWorldRenderFunction, OpenMicrofrontendsExampleBrowserStandaloneHelloWorldRenderFunctionName} from './_generated/microfrontendRenderers.js';
+import {OpenMicrofrontendsExampleBrowserStandaloneHelloWorldRenderer, OpenMicrofrontendsExampleBrowserStandaloneHelloWorldRendererFunctionName} from './_generated/microfrontendRenderers.js';
 
 const template = (helloWorldMessage: string) => {
     return `
@@ -12,7 +12,7 @@ const template = (helloWorldMessage: string) => {
     `;
 };
 
-const renderFn: OpenMicrofrontendsExampleBrowserStandaloneHelloWorldRenderFunction = async (host, context) => {
+const renderer: OpenMicrofrontendsExampleBrowserStandaloneHelloWorldRenderer = async (host, context) => {
     const {config, messageBus} = context;
     let count = 0;
 
@@ -45,5 +45,5 @@ const renderFn: OpenMicrofrontendsExampleBrowserStandaloneHelloWorldRenderFuncti
 };
 
 export default {
-    [OpenMicrofrontendsExampleBrowserStandaloneHelloWorldRenderFunctionName]: renderFn,
+    [OpenMicrofrontendsExampleBrowserStandaloneHelloWorldRendererFunctionName]: renderer,
 };
