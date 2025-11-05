@@ -139,13 +139,13 @@ export async function startOpenMicrofrontendsExampleAPIProxyWithSecurity(
     );
   }
 
-  const renderFunction =
+  const rendererFunction =
     exportedModules.find((m) => 'startApiProxySecurityMicrofrontend' in m)?.['startApiProxySecurityMicrofrontend'] ||
     exportedModules.find((m) => 'default' in m && 'startApiProxySecurityMicrofrontend' in m.default)?.default?.[
       'startApiProxySecurityMicrofrontend'
     ] ||
     (window as any)['startApiProxySecurityMicrofrontend'];
-  if (!renderFunction) {
+  if (!rendererFunction) {
     throw new Error(
       '[OpenMicrofrontends] Renderer of Microfrontend "OpenMicrofrontends Example API Proxy with Security" not found!'
     );
@@ -170,7 +170,7 @@ export async function startOpenMicrofrontendsExampleAPIProxyWithSecurity(
 
   // Render the Microfrontend
   console.info('[OpenMicrofrontends] Starting Microfrontend "OpenMicrofrontends Example API Proxy with Security"');
-  const lifecycleHooks = await renderFunction(hostElement, contextWithDefaultConfig);
+  const lifecycleHooks = await rendererFunction(hostElement, contextWithDefaultConfig);
 
   return {
     close: async () => {

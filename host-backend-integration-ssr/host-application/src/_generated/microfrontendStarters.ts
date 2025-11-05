@@ -144,13 +144,13 @@ export async function startOpenMicrofrontendsExampleSSR(
     throw new Error('[OpenMicrofrontends] Loading assets of Microfrontend "OpenMicrofrontends Example SSR" failed!');
   }
 
-  const renderFunction =
+  const rendererFunction =
     exportedModules.find((m) => 'startSSRMicrofrontend' in m)?.['startSSRMicrofrontend'] ||
     exportedModules.find((m) => 'default' in m && 'startSSRMicrofrontend' in m.default)?.default?.[
       'startSSRMicrofrontend'
     ] ||
     (window as any)['startSSRMicrofrontend'];
-  if (!renderFunction) {
+  if (!rendererFunction) {
     throw new Error('[OpenMicrofrontends] Renderer of Microfrontend "OpenMicrofrontends Example SSR" not found!');
   }
 
@@ -171,7 +171,7 @@ export async function startOpenMicrofrontendsExampleSSR(
 
   // Render the Microfrontend
   console.info('[OpenMicrofrontends] Starting Microfrontend "OpenMicrofrontends Example SSR"');
-  const lifecycleHooks = await renderFunction(hostElement, contextWithDefaultConfig);
+  const lifecycleHooks = await rendererFunction(hostElement, contextWithDefaultConfig);
 
   return {
     close: async () => {

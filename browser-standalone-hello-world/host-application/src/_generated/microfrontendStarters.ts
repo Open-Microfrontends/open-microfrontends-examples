@@ -103,14 +103,14 @@ export async function startOpenMicrofrontendsExampleBrowserStandaloneHelloWorld(
     );
   }
 
-  const renderFunction =
+  const rendererFunction =
     exportedModules.find((m) => 'startBrowserStandaloneHelloWorldMicrofrontend' in m)?.[
       'startBrowserStandaloneHelloWorldMicrofrontend'
     ] ||
     exportedModules.find((m) => 'default' in m && 'startBrowserStandaloneHelloWorldMicrofrontend' in m.default)
       ?.default?.['startBrowserStandaloneHelloWorldMicrofrontend'] ||
     (window as any)['startBrowserStandaloneHelloWorldMicrofrontend'];
-  if (!renderFunction) {
+  if (!rendererFunction) {
     throw new Error(
       '[OpenMicrofrontends] Renderer of Microfrontend "OpenMicrofrontends Example Browser Standalone Hello World" not found!'
     );
@@ -128,7 +128,7 @@ export async function startOpenMicrofrontendsExampleBrowserStandaloneHelloWorld(
   console.info(
     '[OpenMicrofrontends] Starting Microfrontend "OpenMicrofrontends Example Browser Standalone Hello World"'
   );
-  const lifecycleHooks = await renderFunction(hostElement, contextWithDefaultConfig);
+  const lifecycleHooks = await rendererFunction(hostElement, contextWithDefaultConfig);
 
   return {
     close: async () => {

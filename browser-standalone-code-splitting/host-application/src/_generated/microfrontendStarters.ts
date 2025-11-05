@@ -107,14 +107,14 @@ export async function startOpenMicrofrontendsExampleBrowserStandaloneCodeSplitti
     );
   }
 
-  const renderFunction =
+  const rendererFunction =
     exportedModules.find((m) => 'startBrowserStandaloneCodeSplittingMicrofrontend' in m)?.[
       'startBrowserStandaloneCodeSplittingMicrofrontend'
     ] ||
     exportedModules.find((m) => 'default' in m && 'startBrowserStandaloneCodeSplittingMicrofrontend' in m.default)
       ?.default?.['startBrowserStandaloneCodeSplittingMicrofrontend'] ||
     (window as any)['startBrowserStandaloneCodeSplittingMicrofrontend'];
-  if (!renderFunction) {
+  if (!rendererFunction) {
     throw new Error(
       '[OpenMicrofrontends] Renderer of Microfrontend "OpenMicrofrontends Example Browser Standalone Code Splitting" not found!'
     );
@@ -132,7 +132,7 @@ export async function startOpenMicrofrontendsExampleBrowserStandaloneCodeSplitti
   console.info(
     '[OpenMicrofrontends] Starting Microfrontend "OpenMicrofrontends Example Browser Standalone Code Splitting"'
   );
-  const lifecycleHooks = await renderFunction(hostElement, contextWithDefaultConfig);
+  const lifecycleHooks = await rendererFunction(hostElement, contextWithDefaultConfig);
 
   return {
     close: async () => {

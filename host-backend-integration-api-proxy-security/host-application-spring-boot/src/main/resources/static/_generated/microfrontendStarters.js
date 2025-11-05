@@ -72,10 +72,10 @@ export async function startOpenMicrofrontendsExampleAPIProxyWithSecurity(hostEle
     catch (e) {
         throw new Error('[OpenMicrofrontends] Loading assets of Microfrontend "OpenMicrofrontends Example API Proxy with Security" failed!');
     }
-    const renderFunction = exportedModules.find((m) => 'startApiProxySecurityMicrofrontend' in m)?.['startApiProxySecurityMicrofrontend'] ||
+    const rendererFunction = exportedModules.find((m) => 'startApiProxySecurityMicrofrontend' in m)?.['startApiProxySecurityMicrofrontend'] ||
         exportedModules.find((m) => 'default' in m && 'startApiProxySecurityMicrofrontend' in m.default)?.default?.['startApiProxySecurityMicrofrontend'] ||
         window['startApiProxySecurityMicrofrontend'];
-    if (!renderFunction) {
+    if (!rendererFunction) {
         throw new Error('[OpenMicrofrontends] Renderer of Microfrontend "OpenMicrofrontends Example API Proxy with Security" not found!');
     }
     const apiProxyPaths = {};
@@ -93,7 +93,7 @@ export async function startOpenMicrofrontendsExampleAPIProxyWithSecurity(hostEle
     };
     // Render the Microfrontend
     console.info('[OpenMicrofrontends] Starting Microfrontend "OpenMicrofrontends Example API Proxy with Security"');
-    const lifecycleHooks = await renderFunction(hostElement, contextWithDefaultConfig);
+    const lifecycleHooks = await rendererFunction(hostElement, contextWithDefaultConfig);
     return {
         close: async () => {
             console.info('[OpenMicrofrontends] Closing Microfrontend "OpenMicrofrontends Example API Proxy with Security"');
