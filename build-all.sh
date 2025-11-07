@@ -25,14 +25,14 @@ CWD="$(dirname "$0")"
 
 for npmPackagePath in "${NPM_PACKAGES[@]}"; do
   echo "=== Building NPM package $npmPackagePath ==="
-  npm i --prefix "$npmPackagePath"
+  npm ci --prefix "$npmPackagePath"
   # npm run generate --prefix "$npmPackagePath"
   npm run type-check --prefix "$npmPackagePath"
   npm run build --prefix "$npmPackagePath"
 done
 
 for javaPackagePath in "${JAVA_PACKAGES[@]}"; do
-  echo "=== Building Java package javaPackagePath ==="
+  echo "=== Building Java package $javaPackagePath ==="
   cd "$CWD/$javaPackagePath"
   ./gradlew build
 done
