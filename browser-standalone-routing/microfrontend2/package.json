@@ -10,8 +10,8 @@
     "http-server": "^14.1.1"
   },
   "devDependencies": {
-    "@open-microfrontends/types": "file:../../../open-microfrontends/packages/types",
-    "@open-microfrontends/open-microfrontends-generator": "file:../../../open-microfrontends-generator",
+    "@open-microfrontends/types": "^1.0.0",
+    "@open-microfrontends/generator": "^1.0.0",
     "cpy-cli": "^6.0.0",
     "vue": "^3.5.22",
     "vue-tsc": "^3.1.0",

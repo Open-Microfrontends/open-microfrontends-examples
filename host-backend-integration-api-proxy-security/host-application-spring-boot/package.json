@@ -5,8 +5,8 @@
   "private": true,
   "devDependencies": {
     "typescript": "^5.9.3",
-    "@open-microfrontends/types": "file:../../../open-microfrontends/packages/types",
-    "@open-microfrontends/open-microfrontends-generator": "file:../../../open-microfrontends-generator"
+    "@open-microfrontends/types": "^1.0.0",
+    "@open-microfrontends/generator": "^1.0.0"
   },
   "scripts": {
     "generate:starter": "omg ../microfrontends.yaml src/main/resources/static/_generated -t starters && tsc",

@@ -12,8 +12,8 @@
     "http-proxy-3": "^1.22.0"
   },
   "devDependencies": {
-    "@open-microfrontends/types": "file:../../../open-microfrontends/packages/types",
-    "@open-microfrontends/open-microfrontends-generator": "file:../../../open-microfrontends-generator",
+    "@open-microfrontends/types": "^1.0.0",
+    "@open-microfrontends/generator": "^1.0.0",
     "typescript": "^5.9.2",
     "tslib": "^2.8.1",
     "@types/express": "^5.0.3",
