@@ -27,7 +27,7 @@ app.get(OpenMicrofrontendsExampleAPIProxyWithSecurityUserPermissionsPath, permis
 app.use(OpenMicrofrontendsExampleAPIProxyWithSecurityAssetsBasePath, express.static(resolve(import.meta.dirname, '..')));
 
 // Expose description
-app.use('/microfrontends.yaml', express.static(resolve(import.meta.dirname, '..', '..', '..', 'microfrontends.yaml')));
+app.use('/microfrontends.yaml', express.static(resolve(import.meta.dirname, '..', 'microfrontends.yaml')));
 // Expose package.json (as build manifest)
 app.use(OpenMicrofrontendsExampleAPIProxyWithSecurityBuildManifestPath, express.static(resolve(import.meta.dirname, '..', '..', 'package.json')));
 

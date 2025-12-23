@@ -32,7 +32,7 @@ app.post(OpenMicrofrontendsExampleSSRServerSideRendererPath, ssr);
 app.use(OpenMicrofrontendsExampleSSRAssetsBasePath, express.static(resolve(serverDir, 'public')));
 
 // Expose description
-app.use('/microfrontends.yaml', express.static(resolve(serverDir, '..', '..', 'microfrontends.yaml')));
+app.use('/microfrontends.yaml', express.static(resolve(serverDir, 'microfrontends.yaml')));
 
 app.listen(PORT, () => {
     console.info(`OpenMicrofrontends SSR Example running on http://localhost:${PORT}`);
